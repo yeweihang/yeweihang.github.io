@@ -203,7 +203,7 @@ false
 
 引用类型
 引用类型的变量只是">
-<meta property="og:updated_time" content="2017-02-28T09:15:27.745Z">
+<meta property="og:updated_time" content="2017-03-01T15:00:21.636Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java基本编码">
 <meta name="twitter:description" content="Java基本编码
@@ -568,6 +568,30 @@ false
 </ul>
 </blockquote>
 <h2 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h2><p><code>变量名1 = (变量名1的类型)变量名2;</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">short</span> a = <span class="number">10</span>;</div><div class="line"><span class="keyword">byte</span> b = (<span class="keyword">byte</span>)a;</div><div class="line"><span class="keyword">int</span> i = <span class="number">97</span>;</div><div class="line"><span class="keyword">char</span> c = (<span class="keyword">char</span>)i; <span class="comment">//这个经常用</span></div></pre></td></tr></table></figure></p>
+<h3 id="系统强制转换"><a href="#系统强制转换" class="headerlink" title="系统强制转换"></a>系统强制转换</h3><blockquote>
+<p>不同的类型的数字进行运算时，系统会强制改变数据类型。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">byte</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">byte</span> b = <span class="number">2</span>;</div><div class="line"><span class="keyword">byte</span> c = a + b;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>在程序编译时上面的代码是会有Error：<br><code>Type misamtch:cannot convert from int to byte</code> </p>
+<blockquote>
+<p>因为在执行<code>a+b</code>时，系统会把a和b的类型转换为int类型然后计算，就算的结果也是int型，所以在把int类型赋值给byte类型时就产生了错误。</p>
+</blockquote>
+<p><strong>系统强制类型转换有如下的规则</strong></p>
+<ul>
+<li>操作数如果有double类型，则都会转换成double类型。</li>
+<li>如果有float类型，则会转换为float类型。</li>
+<li>如果有long类型，则都会转换为long类型。</li>
+<li>其他的都会转换为int类型。<br><em>（逐级递减）</em></li>
+</ul>
+<blockquote>
+<p>可将上面的代码改为<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">byte</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">byte</span> b = <span class="number">2</span>;</div><div class="line"><span class="keyword">byte</span> c = (<span class="keyword">byte</span>)(a + b);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><h4 id="amp-amp-与-amp-的区别和-与-的区别"><a href="#amp-amp-与-amp-的区别和-与-的区别" class="headerlink" title="&amp;&amp;与&amp;的区别和||与|的区别"></a>&amp;&amp;与&amp;的区别和||与|的区别</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">int</span> b = <span class="number">2</span>;</div><div class="line"><span class="keyword">int</span> c = <span class="number">2</span>;</div><div class="line">System.out.println((a &gt; b) &amp;&amp; (a &gt;(b--)));</div><div class="line">System.out.println((a &gt; b) &amp; (a &gt;(c--)));</div><div class="line">ystem.out.println(b);</div><div class="line">System.out.println(c);</div></pre></td></tr></table></figure>
+<p>运行结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">false</div><div class="line">false</div><div class="line">b = 2</div><div class="line">c = 1</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>可以看出 &amp;&amp; 和 &amp; 的运算结果是相同的，单b和c的值不同，使用 &amp;&amp; 时，后面的表达式没有计算；使用 &amp; 时，后面的表达式进行了计算。实际上是 &amp;&amp; 运算前面的表达式为false，结果就是false，所以后面就不用计算，<strong>但如果为true，后面的表达式就要进行运算。</strong><br> || 与 | 的区别也是这样。<br><strong>【记住】</strong> &amp;&amp; 和 || 是快速运算符，但不能保证后面的表达式会被执行。</p>
+<h2 id="三目运算符"><a href="#三目运算符" class="headerlink" title="三目运算符"></a>三目运算符</h2><h3 id="a-b-c"><a href="#a-b-c" class="headerlink" title="a?b:c;"></a>a?b:c;</h3><p>a的结果应该为布尔类型，如果a的值为true，则结果为b;如果a的值为false，则结果为b。  </p>
+</blockquote>
+<h1 id="——"><a href="#——" class="headerlink" title="——"></a>——</h1><p>笔记总结于《Java语言程序设计》</p>
 </span>
       
     </div>
@@ -780,7 +804,7 @@ false
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java基本编码"><span class="nav-number">1.</span> <span class="nav-text">Java基本编码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#信息表示"><span class="nav-number">1.1.</span> <span class="nav-text">信息表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本数据类型"><span class="nav-number">1.1.1.</span> <span class="nav-text">基本数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用类型"><span class="nav-number">1.1.2.</span> <span class="nav-text">引用类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#强制类型转换"><span class="nav-number">1.2.</span> <span class="nav-text">强制类型转换</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java基本编码"><span class="nav-number">1.</span> <span class="nav-text">Java基本编码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#信息表示"><span class="nav-number">1.1.</span> <span class="nav-text">信息表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本数据类型"><span class="nav-number">1.1.1.</span> <span class="nav-text">基本数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用类型"><span class="nav-number">1.1.2.</span> <span class="nav-text">引用类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#强制类型转换"><span class="nav-number">1.2.</span> <span class="nav-text">强制类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系统强制转换"><span class="nav-number">1.2.1.</span> <span class="nav-text">系统强制转换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">1.3.</span> <span class="nav-text">逻辑运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#amp-amp-与-amp-的区别和-与-的区别"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">&&与&的区别和||与|的区别</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三目运算符"><span class="nav-number">1.4.</span> <span class="nav-text">三目运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-b-c"><span class="nav-number">1.4.1.</span> <span class="nav-text">a?b:c;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#——"><span class="nav-number">2.</span> <span class="nav-text">——</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
