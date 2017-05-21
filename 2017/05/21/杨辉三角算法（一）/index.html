@@ -37,16 +37,31 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="新的开始，新的征程！">
+<meta name="description" content="打印杨辉三角算法（一）杨辉三角
+是我国南宋数学家杨辉在1261年发现的，详细记载于与其所著的《详解九章算法》特征
+第n行的数字有n项
+每行数字左右对称，由1开始逐渐变大
+每个数等于它上方两数之和
+如下所示排列：　　　　　　　　１　　　　　　　１　１　　　　　　１　２　１　　　　　１　３　３　１　　　　１　４　６　４　１　　　１　５　10　10　５　１　　１　６　15　20　15　６　１　１　７　2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="start">
-<meta property="og:url" content="http://yoursite.com/2017/01/03/start/index.html">
+<meta property="og:title" content="打印杨辉三角算法（一）">
+<meta property="og:url" content="http://yoursite.com/2017/05/21/杨辉三角算法（一）/index.html">
 <meta property="og:site_name" content="叶苇杭的个人主页">
-<meta property="og:description" content="新的开始，新的征程！">
-<meta property="og:updated_time" content="2017-01-03T16:05:42.236Z">
+<meta property="og:description" content="打印杨辉三角算法（一）杨辉三角
+是我国南宋数学家杨辉在1261年发现的，详细记载于与其所著的《详解九章算法》特征
+第n行的数字有n项
+每行数字左右对称，由1开始逐渐变大
+每个数等于它上方两数之和
+如下所示排列：　　　　　　　　１　　　　　　　１　１　　　　　　１　２　１　　　　　１　３　３　１　　　　１　４　６　４　１　　　１　５　10　10　５　１　　１　６　15　20　15　６　１　１　７　2">
+<meta property="og:updated_time" content="2017-04-18T15:32:14.836Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="start">
-<meta name="twitter:description" content="新的开始，新的征程！">
+<meta name="twitter:title" content="打印杨辉三角算法（一）">
+<meta name="twitter:description" content="打印杨辉三角算法（一）杨辉三角
+是我国南宋数学家杨辉在1261年发现的，详细记载于与其所著的《详解九章算法》特征
+第n行的数字有n项
+每行数字左右对称，由1开始逐渐变大
+每个数等于它上方两数之和
+如下所示排列：　　　　　　　　１　　　　　　　１　１　　　　　　１　２　１　　　　　１　３　３　１　　　　１　４　６　４　１　　　１　５　10　10　５　１　　１　６　15　20　15　６　１　１　７　2">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -56,7 +71,7 @@
   };
 </script>
 
-  <title> start | 叶苇杭的个人主页 </title>
+  <title> 打印杨辉三角算法（一） | 叶苇杭的个人主页 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -181,7 +196,7 @@
           
           
             
-              start
+              打印杨辉三角算法（一）
             
           
         </h1>
@@ -190,8 +205,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2017-01-03T23:50:33+08:00" content="2017-01-03">
-            2017-01-03
+          <time itemprop="dateCreated" datetime="2017-05-21T15:57:18+08:00" content="2017-05-21">
+            2017-05-21
           </time>
         </span>
 
@@ -200,8 +215,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/生活/" itemprop="url" rel="index">
-                  <span itemprop="name">生活</span>
+                <a href="/categories/算法/" itemprop="url" rel="index">
+                  <span itemprop="name">算法</span>
                 </a>
               </span>
 
@@ -217,11 +232,11 @@
             <span class="post-comments-count">
               &nbsp; | &nbsp;
               <!--
-              <a href="/2017/01/03/start/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/03/start/" itemprop="commentsCount"></span>
+              <a href="/2017/05/21/杨辉三角算法（一）/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/21/杨辉三角算法（一）/" itemprop="commentsCount"></span>
               </a>
               -->
-              <a href="/2017/01/03/start/#comments" itemprop="discussionUrl">
+              <a href="/2017/05/21/杨辉三角算法（一）/#comments" itemprop="discussionUrl">
                 <span>评论</span>
               </a>
             </span>
@@ -236,7 +251,30 @@
       
 
       
-        <span itemprop="articleBody"><p>新的开始，新的征程！</p>
+        <span itemprop="articleBody"><h1 id="打印杨辉三角算法（一）"><a href="#打印杨辉三角算法（一）" class="headerlink" title="打印杨辉三角算法（一）"></a>打印杨辉三角算法（一）</h1><h2 id="杨辉三角"><a href="#杨辉三角" class="headerlink" title="杨辉三角"></a>杨辉三角</h2><ul>
+<li>是我国南宋数学家杨辉在1261年发现的，详细记载于与其所著的《详解九章算法》<h3 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h3><ol>
+<li>第n行的数字有n项</li>
+<li>每行数字左右对称，由1开始逐渐变大</li>
+<li>每个数等于它上方两数之和<blockquote>
+<p><strong>如下所示排列：</strong><br>　　　　　　　　１<br>　　　　　　　１　１<br>　　　　　　１　２　１<br>　　　　　１　３　３　１<br>　　　　１　４　６　４　１<br>　　　１　５　10　10　５　１<br>　　１　６　15　20　15　６　１<br>　１　７　21　35　35　21　７　１<br>１　８　28　56　70　56　28　８　１</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="分析思路"><a href="#分析思路" class="headerlink" title="分析思路"></a>分析思路</h3><ol>
+<li>定义一个二维数组，array[n][ ]；</li>
+<li>为每行申请元素，第n行的数字有n项；</li>
+<li>为每行的第一个列和最后一列赋值为1；</li>
+<li>因为第一、二行是固定的，接下来为从第三行开始的其他列赋值，由上面的排列方式可以得出规律:第i行j列的数字为上面一行j-1列的数字与j列的和；array[i][j]=array[i-1][j-1]+array[i-1][j];</li>
+<li>输出杨辉三角；</li>
+</ol>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.Scanner;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">YhTriangle</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">yhTriangle</span><span class="params">()</span> </span>&#123;</div><div class="line">		Scanner in = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		System.out.print(<span class="string">"输入杨辉三角的阶梯数："</span>);</div><div class="line">		<span class="keyword">int</span> n = in.nextInt();</div><div class="line">		<span class="keyword">int</span>[][] array = <span class="keyword">new</span> <span class="keyword">int</span>[n][];</div><div class="line">		<span class="comment">// 为每行申请元素，第一行1个，第二行2个，第三行3个...第n行n个。</span></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; array.length; i++) &#123;</div><div class="line">			array[i] = <span class="keyword">new</span> <span class="keyword">int</span>[i + <span class="number">1</span>];</div><div class="line">		&#125;</div><div class="line">		<span class="comment">// 将1复制给每行的第一列和最后一列</span></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; array.length; i++) &#123;</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; array[i].length; j++) &#123;</div><div class="line">				array[i][<span class="number">0</span>] = <span class="number">1</span>;<span class="comment">// 为每行的第一列赋值为1</span></div><div class="line">				array[i][i] = <span class="number">1</span>;<span class="comment">// 为每行的最后一列赋值为1</span></div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="comment">// 为从第3行开始的中间的元素赋值</span></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; array.length; i++) &#123;</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; i; j++) &#123;</div><div class="line">				array[i][j] = array[i - <span class="number">1</span>][j - <span class="number">1</span>] + array[i - <span class="number">1</span>][j];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="comment">// 输出杨辉三角</span></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> arr[] : array) &#123;</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> a : arr) &#123;</div><div class="line">				System.out.print(a + <span class="string">" "</span>);</div><div class="line">			&#125;</div><div class="line">			System.out.println();<span class="comment">// 换行</span></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><blockquote>
+<p>输入杨辉三角的阶梯数：7<br>1<br>1 1<br>1 2 1<br>1 3 3 1<br>1 4 6 4 1<br>1 5 10 10 5 1<br>1 6 15 20 15 6 1 </p>
+</blockquote>
+<hr>
+<p><strong>还能用一维数组实现，下次分析！</strong></p>
 </span>
       
     </div>
@@ -248,11 +286,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/05/[转]不良少年的寻梦路/" rel="prev">【转】不良少年的寻梦路</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/21/Java类中3种变量/" rel="next">Java三大变量</a>
             
           </div>
         </div>
@@ -356,8 +394,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2017/01/03/start/"
-                   data-title="start" data-url="http://yoursite.com/2017/01/03/start/">
+              <div class="ds-thread" data-thread-key="2017/05/21/杨辉三角算法（一）/"
+                   data-title="打印杨辉三角算法（一）" data-url="http://yoursite.com/2017/05/21/杨辉三角算法（一）/">
               </div>
             
           </div>
@@ -449,7 +487,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#打印杨辉三角算法（一）"><span class="nav-number">1.</span> <span class="nav-text">打印杨辉三角算法（一）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#杨辉三角"><span class="nav-number">1.1.</span> <span class="nav-text">杨辉三角</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特征"><span class="nav-number">1.1.1.</span> <span class="nav-text">特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析思路"><span class="nav-number">1.1.2.</span> <span class="nav-text">分析思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.1.3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行结果"><span class="nav-number">1.1.4.</span> <span class="nav-text">运行结果</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
