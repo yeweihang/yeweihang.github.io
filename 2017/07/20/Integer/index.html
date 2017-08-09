@@ -37,19 +37,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="Integer类型数据在Byte范围内,JVM不会从新new对象
-1234567891011Integer integer1 = 127;Integer integer2 = 127;System.out.println(integer1 == integer2);//trueByte byte1 = new Byte((byte) 23);Byte byte2 = new Byte((byte)">
+<meta name="description" content="Integer类型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Integer细节">
 <meta property="og:url" content="http://yoursite.com/2017/07/20/Integer/index.html">
 <meta property="og:site_name" content="叶苇杭的个人主页">
-<meta property="og:description" content="Integer类型数据在Byte范围内,JVM不会从新new对象
-1234567891011Integer integer1 = 127;Integer integer2 = 127;System.out.println(integer1 == integer2);//trueByte byte1 = new Byte((byte) 23);Byte byte2 = new Byte((byte)">
-<meta property="og:updated_time" content="2017-08-08T07:15:17.185Z">
+<meta property="og:description" content="Integer类型">
+<meta property="og:updated_time" content="2017-08-09T05:37:43.513Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Integer细节">
-<meta name="twitter:description" content="Integer类型数据在Byte范围内,JVM不会从新new对象
-1234567891011Integer integer1 = 127;Integer integer2 = 127;System.out.println(integer1 == integer2);//trueByte byte1 = new Byte((byte) 23);Byte byte2 = new Byte((byte)">
+<meta name="twitter:description" content="Integer类型">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -239,7 +236,8 @@
       
 
       
-        <span itemprop="articleBody"><h3 id="Integer类型"><a href="#Integer类型" class="headerlink" title="Integer类型"></a>Integer类型</h3><p><strong>数据在Byte范围内,JVM不会从新new对象</strong></p>
+        <span itemprop="articleBody"><h3 id="Integer类型"><a href="#Integer类型" class="headerlink" title="Integer类型"></a>Integer类型</h3><a id="more"></a>
+<p><strong>数据在Byte范围内,JVM不会从新new对象</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Integer integer1 = <span class="number">127</span>;</div><div class="line">Integer integer2 = <span class="number">127</span>;</div><div class="line">System.out.println(integer1 == integer2);<span class="comment">//true</span></div><div class="line"></div><div class="line">Byte byte1 = <span class="keyword">new</span> Byte((<span class="keyword">byte</span>) <span class="number">23</span>);</div><div class="line">Byte byte2 = <span class="keyword">new</span> Byte((<span class="keyword">byte</span>) <span class="number">23</span>);</div><div class="line">System.out.println(byte1 == byte2);<span class="comment">//false</span></div><div class="line"></div><div class="line">Byte byte3 = <span class="number">23</span>;</div><div class="line">Byte byte4 = <span class="number">23</span>;</div><div class="line">System.out.println(byte3 == byte4);<span class="comment">//true</span></div></pre></td></tr></table></figure>
 <p>Byte中有一个内部类是ByteCache,用来缓存Byte的数据,所以对于Byte类型赋值,JVM不会再开辟空间，如果Byte类型采用new关键字创建对象JVM会在堆区产生对象<br>Byte范围-128~127</p>
 <p><strong>java源码</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ByteCache</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="title">ByteCache</span><span class="params">()</span></span>&#123;&#125;</div><div class="line"></div><div class="line">    <span class="keyword">static</span> <span class="keyword">final</span> Byte cache[] = <span class="keyword">new</span> Byte[-(-<span class="number">128</span>) + <span class="number">127</span> + <span class="number">1</span>];</div><div class="line"></div><div class="line">    <span class="keyword">static</span> &#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; cache.length; i++)</div><div class="line">            cache[i] = <span class="keyword">new</span> Byte((<span class="keyword">byte</span>)(i - <span class="number">128</span>));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
