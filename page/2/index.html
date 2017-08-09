@@ -3320,31 +3320,45 @@
 
       
         
-          <span itemprop="articleBody">
-            
-            Java三大变量
-类变量（静态变量）
-实例变量
-局部变量（本地变量)
-
-类变量
-
-类变量是声明在类内，方法之外，且使用static修饰的变量
-
-
-实例变量
-实例变量是声明在类内，方法之外，且未使用static修饰的变量
-
-
-局部变量
-局部变量声明在方法、构造器或者块内，且在方法、构造器或者块进入时被
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/05/21/Java类中3种变量/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          <span itemprop="articleBody"><h1 id="Java三大变量"><a href="#Java三大变量" class="headerlink" title="Java三大变量"></a>Java三大变量</h1><ul>
+<li>类变量（静态变量）</li>
+<li>实例变量</li>
+<li><p>局部变量（本地变量)</p>
+</li>
+<li><p>类变量</p>
+<blockquote>
+<p>类变量是声明在类内，方法之外，且使用static修饰的变量</p>
+</blockquote>
+</li>
+<li>实例变量<blockquote>
+<p>实例变量是声明在类内，方法之外，且未使用static修饰的变量</p>
+</blockquote>
+</li>
+<li>局部变量<blockquote>
+<p>局部变量声明在方法、构造器或者块内，且在方法、构造器或者块进入时被创建，一旦退出该变量就会被销毁</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="3者的区别："><a href="#3者的区别：" class="headerlink" title="3者的区别："></a>3者的区别：</h2><h3 id="1、存储位置"><a href="#1、存储位置" class="headerlink" title="1、存储位置"></a>1、存储位置</h3><blockquote>
+<p>静态变量存储于方法区<br>实例变量存储于堆区<br>局部变量存储在栈内存中</p>
+</blockquote>
+<h3 id="2、生命周期"><a href="#2、生命周期" class="headerlink" title="2、生命周期"></a>2、生命周期</h3><blockquote>
+<p>静态变量在加载类过程中优先加载，其生命周期取决于类的生命周期<br>实例变量在创建实例时才创建，它的生命周期取决于实例的生命周期<br>局部变量在方法、构造器或者块进入时被创建，一旦退出该变量就会被销毁</p>
+</blockquote>
+<h3 id="3、引用对象"><a href="#3、引用对象" class="headerlink" title="3、引用对象"></a>3、引用对象</h3><blockquote>
+<p>静态变量属于类，被类的所有实例共享，可以直接使用类名来引用也可以通过类的实例引用<br>实例变量属于某个对象，它必须在创建对象后才可以通过这个对象来使用<br>局部变量属于块内，且只在块中作用</p>
+</blockquote>
+<h3 id="4、默认值"><a href="#4、默认值" class="headerlink" title="4、默认值"></a>4、默认值</h3><blockquote>
+<p>静态变量有默认值，数字的默认为0，boolean的默认为false，对象引用默认值为null,且可以在特殊的静态初始化区赋值<br>实例变量有默认值，数字的默认为0，boolean的默认为false，对象引用默认值为null<br>局部变量没有默认值，因此本地变量必须被声明并且在第一次使用前要给它赋值</p>
+</blockquote>
+<p><strong>实例</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> vip.digreed_001;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreeVar</span> </span>&#123;</div><div class="line">	<span class="comment">//定义静态变量</span></div><div class="line">	<span class="keyword">static</span> <span class="keyword">int</span> staticVar = <span class="number">1</span>;</div><div class="line">	<span class="comment">//定义实例变量</span></div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> instanceVar = <span class="number">1</span>;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="comment">//定义局部变量</span></div><div class="line">		<span class="keyword">int</span> chunk = <span class="number">2</span>;</div><div class="line">		staticVar++;</div><div class="line">		instanceVar++;</div><div class="line">		System.out.println(<span class="string">"staticVar="</span> + staticVar + <span class="string">";"</span> </div><div class="line">				+ <span class="string">"instanceVar="</span> + instanceVar + <span class="string">";chunk="</span> + chunk);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">package</span> vip.digreed_001;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreeVartest</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		ThreeVar test1 = <span class="keyword">new</span> ThreeVar();</div><div class="line">		ThreeVar test2 = <span class="keyword">new</span> ThreeVar();</div><div class="line">		test1.test();</div><div class="line">		test2.test();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>运行</strong></p>
+<blockquote>
+<p>staticVar=2;instanceVar=2;chunk=2<br>staticVar=3;instanceVar=2;chunk=2</p>
+</blockquote>
+<hr>
+<p>仅个人总结</p>
+</span>
         
       
     </div>
@@ -3432,78 +3446,124 @@
 
       
         
-          <span itemprop="articleBody">
-            
-            Java基本编码
-
-信息表示基本数据类型
-
-整型
-
-
-
-
-数据类型
-位数
-
-
-
-
-byte
-8位
-
-
-short
-16位
-
-
-int
-32位
-
-
-long
-64位
-
-
-
-
-浮点型
-
-
-
-
-数据类型
-位数
-
-
-
-
-float
-32位
-
-
-double
-64位
-
-
-
-
-字符型
-
-
-
-
-数据类型
-位数
-
-
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/05/21/Java基本编码/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          <span itemprop="articleBody"><h1 id="Java基本编码"><a href="#Java基本编码" class="headerlink" title="Java基本编码"></a>Java基本编码</h1><hr>
+<blockquote>
+<h2 id="信息表示"><a href="#信息表示" class="headerlink" title="信息表示"></a>信息表示</h2><h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3></blockquote>
+<ul>
+<li>整型</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>位数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byte</td>
+<td>8位</td>
+</tr>
+<tr>
+<td>short</td>
+<td>16位</td>
+</tr>
+<tr>
+<td>int</td>
+<td>32位</td>
+</tr>
+<tr>
+<td>long</td>
+<td>64位</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>浮点型</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>位数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>float</td>
+<td>32位</td>
+</tr>
+<tr>
+<td>double</td>
+<td>64位</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>字符型</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>位数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>char</td>
+<td>16位</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>布尔型<blockquote>
+<ul>
+<li>true</li>
+<li>false</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><blockquote>
+<p>引用类型的变量只是<strong>保存真实数据的地址</strong>，而不是数据本身。引用类型只给变量分配引用空间，数据空间是没有分配的，因为谁也不知道数据是什么啊，整数，字符？引用类型变量在申明后必须通过实例化开辟数据空间，才能对变量所指的对象进行访问。</p>
+<p>引用只能<strong>指向一个系统创建的对象</strong>，就不同与指针，指针可以修改指针的值，把指针指向任何地方，会造成安全问题，而引用就不会。</p>
+<p>语法格式 </p>
+</blockquote>
+<p><code>变量类型 变量名 = new 变量类型();</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String str = <span class="keyword">new</span> String();</div><div class="line">str = <span class="string">"Hello world"</span>;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<ul>
+<li>也可以直接赋值<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">String str1 = <span class="string">"Hello world"</span>;</div><div class="line">String str2 = str1;</div><div class="line"><span class="comment">//相当于把str2指向str1指向的对象，也就是把str1存储的地址存储到了str2中</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h2 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h2><p><code>变量名1 = (变量名1的类型)变量名2;</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">short</span> a = <span class="number">10</span>;</div><div class="line"><span class="keyword">byte</span> b = (<span class="keyword">byte</span>)a;</div><div class="line"><span class="keyword">int</span> i = <span class="number">97</span>;</div><div class="line"><span class="keyword">char</span> c = (<span class="keyword">char</span>)i; <span class="comment">//这个经常用</span></div></pre></td></tr></table></figure></p>
+<h3 id="系统强制转换"><a href="#系统强制转换" class="headerlink" title="系统强制转换"></a>系统强制转换</h3><blockquote>
+<p>不同的类型的数字进行运算时，系统会强制改变数据类型。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">byte</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">byte</span> b = <span class="number">2</span>;</div><div class="line"><span class="keyword">byte</span> c = a + b;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>在程序编译时上面的代码是会有Error：<br><code>Type misamtch:cannot convert from int to byte</code> </p>
+<blockquote>
+<p>因为在执行<code>a+b</code>时，系统会把a和b的类型转换为int类型然后计算，计算的结果也是int型，所以在把int类型赋值给byte类型时就产生了错误。</p>
+</blockquote>
+<p><strong>系统强制类型转换有如下的规则</strong></p>
+<ul>
+<li>操作数如果有double类型，则都会转换成double类型。</li>
+<li>如果有float类型，则会转换为float类型。</li>
+<li>如果有long类型，则都会转换为long类型。</li>
+<li>其他的都会转换为int类型。<br><em>（逐级递减）</em></li>
+</ul>
+<blockquote>
+<p>可将上面的代码改为<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">byte</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">byte</span> b = <span class="number">2</span>;</div><div class="line"><span class="keyword">byte</span> c = (<span class="keyword">byte</span>)(a + b);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><h4 id="amp-amp-与-amp-的区别和-与-的区别"><a href="#amp-amp-与-amp-的区别和-与-的区别" class="headerlink" title="&amp;&amp;与&amp;的区别和||与|的区别"></a>&amp;&amp;与&amp;的区别和||与|的区别</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">int</span> b = <span class="number">2</span>;</div><div class="line"><span class="keyword">int</span> c = <span class="number">2</span>;</div><div class="line">System.out.println((a &gt; b) &amp;&amp; (a &gt;(b--)));</div><div class="line">System.out.println((a &gt; b) &amp; (a &gt;(c--)));</div><div class="line">ystem.out.println(b);</div><div class="line">System.out.println(c);</div></pre></td></tr></table></figure>
+<p>运行结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">false</div><div class="line">false</div><div class="line">b = 2</div><div class="line">c = 1</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>可以看出 &amp;&amp; 和 &amp; 的运算结果是相同的，单b和c的值不同，使用 &amp;&amp; 时，后面的表达式没有计算；使用 &amp; 时，后面的表达式进行了计算。实际上是 &amp;&amp; 运算前面的表达式为false，结果就是false，所以后面就不用计算，<strong>但如果为true，后面的表达式就要进行运算。</strong><br> || 与 | 的区别也是这样。<br><strong>【记住】</strong> &amp;&amp; 和 || 是快速运算符，但不能保证后面的表达式会被执行。</p>
+<h2 id="三目运算符"><a href="#三目运算符" class="headerlink" title="三目运算符"></a>三目运算符</h2><h3 id="a-b-c"><a href="#a-b-c" class="headerlink" title="a?b:c;"></a>a?b:c;</h3><p>a的结果应该为布尔类型，如果a的值为true，则结果为b;如果a的值为false，则结果为b。  </p>
+</blockquote>
+<hr>
+<p>笔记总结于《Java语言程序设计》</p>
+</span>
         
       
     </div>
@@ -3591,18 +3651,65 @@ double
 
       
         
-          <span itemprop="articleBody">
-            
-            不良少年的寻梦路2016年，人生发生了重大的改变。在步入19岁之前，终于功夫不负有心人，找到了人生中第一份工作（10K）。
-当初，上初中的时候，因为不认真读书，整天沉迷于游戏世界。最终导致我中考没有考好，以致于连成都市最差的高中都没有考上。最后还是我的爸爸，帮我在老家找了一所高中，让我读书。
-从此离
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/03/05/[转]不良少年的寻梦路/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          <span itemprop="articleBody"><h2 id="不良少年的寻梦路"><a href="#不良少年的寻梦路" class="headerlink" title="不良少年的寻梦路"></a>不良少年的寻梦路</h2><p>2016年，人生发生了重大的改变。<br>在步入19岁之前，终于功夫不负有心人，找到了人生中第一份工作（10K）。</p>
+<p>当初，上初中的时候，因为不认真读书，整天沉迷于游戏世界。最终导致我中考没有考好，以致于连成都市最差的高中都没有考上。最后还是我的爸爸，帮我在老家找了一所高中，让我读书。</p>
+<p>从此离家千里，开始了我人生中最颓废，最放纵的时光。每天上课就开始睡觉，下课就开始和同学嬉戏打闹，作弄女同学，晚上放了学就和同学翻墙出去，通宵打游戏，每天如此，惶惶度日。</p>
+<p>直到有一天，看到《新上海滩》中，冯敬尧对丁力说得一段话<br><strong>穷人最缺什么？</strong><br><strong>野心！穷人最缺的是成为人上人的野心！</strong></p>
+<p>这个世道就是这样，弱肉强食，嫌贫爱富，没有什么道理可讲，道理都是强权者定的，老天安排你是个穷人，你如果认命，你就会穷一辈子，一辈子让有钱人踩在脚下，耍你戏弄你，你不认命，就得靠你自己。——冯敬尧</p>
+<p>从这时开始，我决定发愤图强，再也不能这样惶惶度日了。经过三天的思考，我下定决心退学，离开这个城市，寻找一条适合自己的人生道路。</p>
+<p>当然在寻找自己的人生路中，会遇到很多的挫折和岔路。</p>
+<p>刚开始我决定，在家把初中的课程，全部复习一遍，再考一次高中。无奈欠下的内容已经太多，如果全部重新学过，路又太过漫长，因此就没有坚持下去。</p>
+<p>后来突然想起，我在初中时候，学过几天Flash。在经过两天的接触后，我发现我对计算机充满了无限好奇和探索的欲望。从此我知道我已经找到属于我的那条人生路了。</p>
+<p>你们猜对了，刚开始自学的时候，确实是没有坚毅力。每天早上依然喜欢睡懒觉，到了学习有困难的时候，依然喜欢打游戏。</p>
+<p>直到有一天，我开始痛恨自己，我决心改变。</p>
+<h2 id="时光轴"><a href="#时光轴" class="headerlink" title="时光轴"></a>时光轴</h2><p>2013年3月2日，正式开始学习软件编程。</p>
+<p>2013年3月15日起，每天早上5点半起床看书，我看的第一本书《毕业三年要挣一百万》，通过这本书，我逐渐培养起了自己晨起读书的习惯。</p>
+<p>2013年9月12日，开始下定决心跑步，每天跑步7公里，风雨无阻，以磨练意志力。最拼的一次是发着烧，下着雨，也依然坚持跑步。</p>
+<p>可能有很多朋友会说，既然生病了，就不要跑了。可是我想说的是，对我而言，跑步并不是全为了锻炼身体，更重要的是磨练自身的毅力。说到这里，想和大家分享一下禅宗中讲得行悟</p>
+<p>禅宗讲：真正的修炼有四种方法，<strong>信悟、解悟、行悟、证悟</strong>。<br>所谓行悟，就是说：悟道，不在于空谈，而在于力行。</p>
+<p>在这里想分享一个唐三藏西天取经的故事。<br>唐三藏（俗家名字，陈祎），立志要去西天取经，所有人都觉得，万里之遥，你怎么去？</p>
+<p>但是你知道人家玄奘法师怎么去，第一，为了练习走路，每天日行百里，风吹日晒雨淋，不管今天身体怎么样，都必须要走过一百里来回，你想想，大冷天发着烧，高烧成那样，水米不打牙，都要日行百里。</p>
+<p>第二件事更了不起，有人说去西天取经，要过大沙漠，没有食物，没有水你怎么办?</p>
+<p>三藏说我练，不吃东西不喝水，从一天练到五天，从五天练到十天，人家可以十天不吃东西不喝水，日行百里有了这个决心才修成正果。</p>
+<p>所以说很多事情并不是我们没有条件，而是因为我们没有决心，下决心才是最重要的，只要你觉得对那就去做，不要犹豫。</p>
+<p>2013年10月，我经过了5个月，每天三个小时的学习，终于将孙子兵法全部看完背过。</p>
+<h2 id="自学真的很难！"><a href="#自学真的很难！" class="headerlink" title="自学真的很难！"></a>自学真的很难！</h2><p>自学的难度相当之大，尤其是在自学的初期，在这个阶段由于对整个知识体系的认知不足，定会导致思想上的恐惧从而萌发出放弃的想法，此时如果没有坚定的信念，那么自学便极有可能失败。</p>
+<h3 id="自学的迷茫"><a href="#自学的迷茫" class="headerlink" title="自学的迷茫"></a>自学的迷茫</h3><p>2013年4月15日，经过了一个多月的学习，终于将基本内容学习完，并能够做一些简单的动画效果了。可是这时对于没有绘画功底的我彻底的迷茫了，我不知道接下来应该做些什么，Flash是否真的适合于我。在经过了一段时间思索之后，我决定开始学习编程。</p>
+<p>2013年4月20日，开始学习C语言，可没有想到一天就遇到了难题，对于连26个字母都无法完整背出我，一看到那么多的英文单词当时就头晕了。后来我想到了个最笨的方法，就是对于每个见到的单词，都用有道词典打出来，每见一次都要打五次，就这样最终解决了我懂英语的苦境。</p>
+<h3 id="学习态度"><a href="#学习态度" class="headerlink" title="学习态度"></a>学习态度</h3><p>我对学习态度就是，对于学习要保持一颗敬畏之心，敬畏学习是严肃、认真、谨慎的一种学习态度和学习情怀。因为我自始至终将自己设定为全天下最愚钝的人，所以学习的时候，就并没有去试图寻找一种捷径。</p>
+<p>因此我最初的学习方法很简单：</p>
+<ol>
+<li>对于没有学会的知识，晚上专门抽时间，练习5遍以上，直到掌握。</li>
+<li>对于已经学会的知识，晚上专门抽时间，练习3遍，强化记忆。</li>
+</ol>
+<p>2013年9月，我将C语言和数据结构的知识点学完，并报名了计算机二级考试，最后考试结果大出所料，我只得到了56分。这个消息对于当时的我来说，如同晴天霹雳一般，刻苦学习的半年，被所有人认为我在家是在玩乐。即使没有，也证明了离开老师，自己学习的路是行不通的。<br>再一次，我受到了强烈的反对和批评教育。<br>放弃？</p>
+<p>当我决定在家自学时，几乎受到了几乎所有人的质疑。所有人都对我父亲说：如果继续这样放纵我，那我的一生就沦丧了。所有的人都在劝我放弃，他们看我的笑话，嘲笑我的梦想。</p>
+<p>放弃？我的字典里没有这个词！<br>当他们放弃时我继续努力。当他们沉睡时，我更加努力。<br>当他们说我不行，认为我会放弃时。我证明给他们看，我可以！<br>他们嘲笑我的梦想，最终嘲笑的是他们自己。</p>
+<p>外界强烈的反对，更加激发了我刻苦学习的决心。我开始每天5:30起来看书，晚上12点才休息。我开始强迫自己戒掉打任何的游戏（之前已经戒过网络游戏），并且开始每天晚上跑步5千米，风雨无阻，借此来培养意志力。</p>
+<p>2013年12月，开始学习前端Web开发，在历经9个月的学习后，终于将前端开发的必备知识学完，但是却又不太喜欢每天画页面的感觉。<br>2014年9月，我又转向了服务器开发（C#），这一次我终于找到自己以后发展的方向。</p>
+<h2 id="第一次面试"><a href="#第一次面试" class="headerlink" title="第一次面试"></a>第一次面试</h2><p>2015年5月，在做了几个项目以后，开始投递简历。由于当时并不知道拉勾网，就在58上投递了很多份简历，但是接到的几乎全是销售电话。只有2家公司邀我去面试，这让我的信心，顿时受到了莫大的打击。第一家面试的公司，规模很小，加上老板一共只有5个人，没有见到面试官，只是让我做几道已经出好的面试题。可能由于是第一次面试的原因，平时做很简单的几道题，硬是做了2个小时，都没有做出来，直到12点钟，他们吃饭了，我才灰溜溜的离开。</p>
+<p>虽然这一次的面试非常失败，但是我始终相信一句话：“有志者事竟成，苦心人天不负”，在经过一个星期的调整以后，终于成功找到了合适的工作。</p>
+<p>2015年8月，不幸公司破产，由于国内的软件环境，我决心从C#转向JAVA开发。<br>2016年2月，经过半年的刻苦学习，成功转入JAVA开发。期间投递简历12份，面试11家公司，成功拿到了5份offer，正式开始了我第一份JAVA工作。</p>
+<p>下面是一些我读过的技术书籍：</p>
+<ol>
+<li>《C语言程序设计》</li>
+<li>《javascript入门经典》</li>
+<li>《javascript高级程序设计》</li>
+<li>《java编程思想》</li>
+<li>《javascript设计模式与开发实践》</li>
+<li>《java TCP/IP Socket编程》</li>
+<li>《java8函数式编程》</li>
+<li>《java并发编程始》</li>
+</ol>
+<h2 id="寻道"><a href="#寻道" class="headerlink" title="寻道"></a>寻道</h2><p>没有人能够告诉我们应该怎样去生活，生活是我们自己的，我们自己提出的问题应该由自己去回答。</p>
+<p>小时候听过的一个童话故事，相信大多数朋友也都听过，故事叫<strong>小马过河</strong></p>
+<blockquote>
+<p>小马要过条河，老牛告诉它，河很浅，你随便过。小松鼠告诉它，河很深，有好几个同伴，下去都淹死了，千万不能过。请问小马过还是不过?<br>我想说的是：<strong>人生就像一条河，过与不过，不取决于河什么样，而取决于你是谁。如果你要是小马，你就勇敢的过，你适合。但如果你要是小松鼠，你就别过，你不适合。小马不能因为小松鼠的建议，就不过河。小松鼠也不能因为小马过去了自己也要过去。</strong></p>
+</blockquote>
+<h2 id="我是梦想追逐者，愿用一生去追逐梦想，永不放弃"><a href="#我是梦想追逐者，愿用一生去追逐梦想，永不放弃" class="headerlink" title="我是梦想追逐者，愿用一生去追逐梦想，永不放弃"></a>我是梦想追逐者，愿用一生去追逐梦想，永不放弃</h2><h2 id="愿与君共勉"><a href="#愿与君共勉" class="headerlink" title="愿与君共勉"></a>愿与君共勉</h2><blockquote>
+<p>摘自Java那些事</p>
+</blockquote>
+</span>
         
       
     </div>
@@ -3690,17 +3797,8 @@ double
 
       
         
-          <span itemprop="articleBody">
-            
-            新的开始，新的征程！
-
-            
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/01/03/start/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          <span itemprop="articleBody"><p>新的开始，新的征程！</p>
+</span>
         
       
     </div>
