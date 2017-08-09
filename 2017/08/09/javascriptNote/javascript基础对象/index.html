@@ -43,7 +43,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/08/09/javascriptNote/javascript基础对象/index.html">
 <meta property="og:site_name" content="叶苇杭的个人主页">
 <meta property="og:description" content="javaScript基础对象">
-<meta property="og:updated_time" content="2017-08-09T10:17:00.131Z">
+<meta property="og:updated_time" content="2017-08-09T11:46:10.157Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javaScript基础对象">
 <meta name="twitter:description" content="javaScript基础对象">
@@ -252,7 +252,7 @@
 </li>
 <li><p>与Java相似的方法</p>
 <blockquote>
-<p>concat(String1,String2…Stringn);连接字符串<br>charAt();返回指定位置的字符<br>indexOf();返回指定字符的位置<br>splitsplit(separator, howmany);把字符串分割为字符数组<br>replace(regexp,replacement);替换字符串<br>subStr()和subString</p>
+<p>concat(String1,String2…Stringn);连接字符串<br>charAt();返回指定位置的字符<br>indexOf();返回指定字符的位置<br>splitsplit(separator, howmany);把字符串分割为字符数组<br>replace(regexp,replacement);替换字符串<br>subStr()和subString();截取字符串</p>
 </blockquote>
 </li>
 </ul>
@@ -264,13 +264,13 @@
 <li>encodeURIComponet();</li>
 <li>decodeURIComponent();</li>
 <li>isNaN();判断当前的字符串是否是数字(是数字返回false，不是数字返回true)</li>
-<li>parseInt();</li>
+<li>parseInt(string,radix);</li>
 </ul>
 <h2 id="js函数的重载"><a href="#js函数的重载" class="headerlink" title="js函数的重载"></a>js函数的重载</h2><p>什么是重载———方法名相同，参数不同<br>js的重载是否存在？不存在。调用最后一个方法，把传递的参数存在arguments;<br>但是可以通过其他方式实现重载<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span>(<span class="built_in">arguments</span>.length == <span class="number">2</span>) &#123;</div><div class="line">		<span class="keyword">return</span> <span class="built_in">arguments</span>[<span class="number">0</span>] + <span class="built_in">arguments</span>[<span class="number">1</span>];</div><div class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">arguments</span>.length == <span class="number">3</span>) &#123;</div><div class="line">		<span class="keyword">return</span> <span class="built_in">arguments</span>[<span class="number">0</span>] + <span class="built_in">arguments</span>[<span class="number">1</span>] + <span class="built_in">arguments</span>[<span class="number">2</span>];</div><div class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">arguments</span>.length == <span class="number">4</span>) &#123;</div><div class="line">		<span class="keyword">return</span> <span class="built_in">arguments</span>[<span class="number">0</span>] + <span class="built_in">arguments</span>[<span class="number">1</span>] + <span class="built_in">arguments</span>[<span class="number">2</span>] + <span class="built_in">arguments</span>[<span class="number">3</span>];</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">alert(add(<span class="number">1</span>, <span class="number">2</span>)); <span class="comment">//3</span></div><div class="line">alert(add(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)); <span class="comment">//6</span></div><div class="line">alert(add(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)); <span class="comment">//10</span></div></pre></td></tr></table></figure></p>
 <h2 id="js的bom对象"><a href="#js的bom对象" class="headerlink" title="js的bom对象"></a>js的bom对象</h2><p>bom: broswer object model:浏览器对象模型</p>
 <ul>
 <li>navigator<blockquote>
-<p>获取浏览器的信息<br> <code>navigator.appName;</code></p>
+<p>获取浏览器的信息<br>  <code>navigator.appName;</code></p>
 </blockquote>
 </li>
 <li>screen<blockquote>
@@ -279,16 +279,17 @@
 </li>
 <li><p>location</p>
 <blockquote>
-<p>请求URL地址<br> herf属性</p>
+<p>请求URL地址</p>
+</blockquote>
+<p>  herf属性</p>
 <ul>
 <li>获取请求的地址</li>
 <li>设置URL地址<ul>
-<li>页面上安置一个按钮，按钮绑定一个事件，当我点击这个按钮，页面跳转到另外一个页面 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">		&lt;input type=<span class="string">"button"</span> id=<span class="string">""</span> value=<span class="string">"跳转"</span> onclick=<span class="string">"href1()"</span>/&gt;</div><div class="line">		<span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></span></div><div class="line">			<span class="comment">//href</span></div><div class="line">			<span class="function"><span class="keyword">function</span> <span class="title">href1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">				location.href = <span class="string">"http://www.baidu.com"</span>;</div><div class="line">			&#125;</div><div class="line">		<span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="string">``</span><span class="string">` </span></div><div class="line"> - history</div><div class="line"> &gt; 请求的URL的历史记录</div><div class="line">	 - back();</div><div class="line">	 - forward();</div><div class="line">	 - go();</div><div class="line">	 	- 参数 -1 ：等于back();</div><div class="line">	 	- 参数 1 : 等于forward();</div><div class="line">`<span class="string">``</span>javascript</div><div class="line">		&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">			<span class="comment">//history</span></div><div class="line">			<span class="function"><span class="keyword">function</span> <span class="title">goBack</span>(<span class="params"></span>) </span>&#123;</div><div class="line">				<span class="comment">//返回上一个页面</span></div><div class="line">				history.back();</div><div class="line">			&#125;</div><div class="line">			<span class="function"><span class="keyword">function</span> <span class="title">goForward</span>(<span class="params"></span>) </span>&#123;</div><div class="line">				<span class="comment">//前进到下一个页面</span></div><div class="line">				history.forward();</div><div class="line">			&#125;</div><div class="line">		&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<li>页面上安置一个按钮，按钮绑定一个事件，当我点击这个按钮，页面跳转到另外一个页面 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">		&lt;input type=<span class="string">"button"</span> id=<span class="string">""</span> value=<span class="string">"跳转"</span> onclick=<span class="string">"href1()"</span>/&gt;</div><div class="line">		&lt;script type="text/javascript"&gt;</div><div class="line">			//href</div><div class="line">			function href1() &#123;</div><div class="line">				location.href = "http://www.baidu.com";</div><div class="line">			&#125;</div><div class="line">		&lt;/script&gt;</div><div class="line"><span class="string">``</span><span class="string">` </span></div><div class="line"></div><div class="line">- history</div><div class="line">&gt; 请求的URL的历史记录</div><div class="line"></div><div class="line">	 - back();</div><div class="line">	 - forward();</div><div class="line">	 - go();</div><div class="line">	 	- 参数 -1 ：等于back();</div><div class="line">	 	- 参数 1 : 等于forward();</div><div class="line">`<span class="string">``</span>javascript</div><div class="line">		&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">			<span class="comment">//history</span></div><div class="line">			<span class="function"><span class="keyword">function</span> <span class="title">goBack</span>(<span class="params"></span>) </span>&#123;</div><div class="line">				<span class="comment">//返回上一个页面</span></div><div class="line">				history.back();</div><div class="line">			&#125;</div><div class="line">			<span class="function"><span class="keyword">function</span> <span class="title">goForward</span>(<span class="params"></span>) </span>&#123;</div><div class="line">				<span class="comment">//前进到下一个页面</span></div><div class="line">				history.forward();</div><div class="line">			&#125;</div><div class="line">		&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
-</blockquote>
 </li>
 <li><p><strong>window</strong><br>窗口对象<br>顶层对象(所有的bom对象都是在Window里面操作)</p>
 <ul>
