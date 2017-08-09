@@ -1,0 +1,930 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mala">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="世间安得双全法，宁负如来不负卿" />
+
+
+
+  <meta name="keywords" content="Hexo,next" />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="基础对象js的dom对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javaScript的DOM">
+<meta property="og:url" content="http://yoursite.com/2017/08/09/javascriptNote/javascript的DOM/index.html">
+<meta property="og:site_name" content="叶苇杭的个人主页">
+<meta property="og:description" content="基础对象js的dom对象">
+<meta property="og:updated_time" content="2017-08-09T10:17:19.231Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javaScript的DOM">
+<meta name="twitter:description" content="基础对象js的dom对象">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mala',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> javaScript的DOM | 叶苇杭的个人主页 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">为勤</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-next-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            <i class="menu-item-icon icon-next-about"></i> <br />
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            <i class="menu-item-icon icon-next-guestbook"></i> <br />
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            <i class="menu-item-icon icon-next-commonweal"></i> <br />
+            公益404
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              javaScript的DOM
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2017-08-09T18:06:03+08:00" content="2017-08-09">
+            2017-08-09
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/javaScriptNote/" itemprop="url" rel="index">
+                  <span itemprop="name">javaScriptNote</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <!--
+              <a href="/2017/08/09/javascriptNote/javascript的DOM/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/09/javascriptNote/javascript的DOM/" itemprop="commentsCount"></span>
+              </a>
+              -->
+              <a href="/2017/08/09/javascriptNote/javascript的DOM/#comments" itemprop="discussionUrl">
+                <span>评论</span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h1 id="基础对象"><a href="#基础对象" class="headerlink" title="基础对象"></a>基础对象</h1><h2 id="js的dom对象"><a href="#js的dom对象" class="headerlink" title="js的dom对象"></a>js的dom对象</h2><a id="more"></a>
+<ul>
+<li>dom: document object model: 文档对象模型<ul>
+<li>文档：超文本标记文档。html、xml</li>
+<li>对象：提供属性和方法</li>
+<li>模型：使用属性和方法操作超文本标记型文档<blockquote>
+<ul>
+<li>document对象</li>
+<li>element对象</li>
+<li>属性对象</li>
+<li>文本对象</li>
+<li>Node节点对象：这是上面对象的父对象；</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="DHTML"><a href="#DHTML" class="headerlink" title="DHTML"></a>DHTML</h3><p>是很多技术的简称</p>
+<ul>
+<li>html:封装数据</li>
+<li>css：使用属性和属性值设置样式</li>
+<li>dom：操作html文档</li>
+<li>javascript：专门指的是js的语法语句（ECMAScript）</li>
+</ul>
+<h3 id="document对象"><a href="#document对象" class="headerlink" title="document对象"></a>document对象</h3><blockquote>
+<p>表示整个文档</p>
+</blockquote>
+<h4 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h4><ul>
+<li><p>write();</p>
+<blockquote>
+<p>向页面输出变量<br>向页面输出HTML代码</p>
+</blockquote>
+</li>
+<li><p>getElementById();</p>
+<blockquote>
+<p>通过Id来得到元素，返回的是对拥有指定id的第一个对象的引用；</p>
+</blockquote>
+</li>
+<li>getElentsByName();<blockquote>
+<p>通过标签的name值得到元素，返回的是指定名称的对象的集合；</p>
+</blockquote>
+</li>
+<li>getElementsByTagName();<blockquote>
+<p>通过标签来得到元素，返回指定标签的对象的集合；</p>
+</blockquote>
+</li>
+</ul>
+<p>注意：<br>只有一个标签， 这个标签只能使用name获取得到，这个使用getElementsByName返回的是一个数组，但是现在只有一个元素，这个时候不需要遍历，而是可以直接通过数组的下标获取值<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> inputs = <span class="built_in">document</span>.getElementsByName(<span class="string">"name1"</span>)[<span class="number">0</span>];</div><div class="line">alert(inputs.value);</div></pre></td></tr></table></figure></p>
+<p>案例：widows弹窗案例<br>1、创建一个页面</p>
+<pre><code>- 有两个输入项和一个按钮
+- 按钮上面有一个事件：弹出一个窗口 open
+</code></pre><p>2、创建弹出页面</p>
+<pre><code>- 表格
+- 每一行有一个按钮和编号和名字
+- 按扭上有个事件：把当前的编号和名字，赋值都第一个页面相应的位置
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//user.html</span></div><div class="line">&lt;body&gt;</div><div class="line">		&lt;table border="1" &gt;</div><div class="line">			&lt;tr&gt;</div><div class="line">				&lt;td&gt;操作&lt;/td&gt;</div><div class="line">				&lt;td&gt;编号&lt;/td&gt;</div><div class="line">				&lt;td&gt;姓名&lt;/td&gt;</div><div class="line">			&lt;/tr&gt;</div><div class="line">			&lt;tr&gt;</div><div class="line">				&lt;td&gt;&lt;input type="button" value="选择" onclick="set('100','张三')" /&gt;&lt;/td&gt;</div><div class="line">				&lt;td&gt;100&lt;/td&gt;</div><div class="line">				&lt;td&gt;张三&lt;/td&gt;</div><div class="line">			&lt;/tr&gt;</div><div class="line">			&lt;tr&gt;</div><div class="line">				&lt;td&gt;&lt;input type="button" id="" value="选择" onclick="set('101','李四')" /&gt;&lt;/td&gt;</div><div class="line">				&lt;td&gt;101&lt;/td&gt;</div><div class="line">				&lt;td&gt;李四&lt;/td&gt;</div><div class="line">			&lt;/tr&gt;</div><div class="line">			&lt;tr&gt;</div><div class="line">				&lt;td&gt;&lt;input type="button" id="" value="选择" onclick="set('102','王五')" /&gt;&lt;/td&gt;</div><div class="line">				&lt;td&gt;102&lt;/td&gt;</div><div class="line">				&lt;td&gt;王五&lt;/td&gt;</div><div class="line">			&lt;/tr&gt;</div><div class="line">		&lt;/table&gt;</div><div class="line">		</div><div class="line">		&lt;script type="text/javascript"&gt;</div><div class="line">			function set(num1,name1) &#123;</div><div class="line">				var pwin = window.opener;//得到window页面</div><div class="line">				pwin.document.getElementById("numid").value = num1;</div><div class="line">				pwin.document.getElementById("nameid").value = name1;</div><div class="line">				window.close();</div><div class="line">			&#125;</div><div class="line">		&lt;/script&gt;</div><div class="line">	&lt;/body&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//window.html</span></div><div class="line">	&lt;body&gt;</div><div class="line">		编号：&lt;input type=<span class="string">"text"</span> id=<span class="string">"numid"</span> /&gt;<span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></div><div class="line">		姓名：&lt;input type=<span class="string">"text"</span> id=<span class="string">"nameid"</span> /&gt;<span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></div><div class="line">		&lt;input type=<span class="string">"button"</span> value=<span class="string">"选择"</span> onclick=<span class="string">"goOpen();"</span> /&gt;</div><div class="line">		<span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></span></div><div class="line">			<span class="comment">//实现弹出窗口的方法</span></div><div class="line">			<span class="function"><span class="keyword">function</span> <span class="title">goOpen</span>(<span class="params"></span>)</span>&#123;</div><div class="line">				<span class="built_in">window</span>.open(<span class="string">'user.html'</span>,<span class="string">''</span>,<span class="string">'width = 200px,height = 200px'</span>);</div><div class="line">			&#125;</div><div class="line">		<span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">	&lt;<span class="regexp">/body&gt;</span></div></pre></td></tr></table></figure>
+<p>案例：在末尾添加节点</p>
+<ul>
+<li>第一步：获取ul标签</li>
+<li>第二步：创建li标签<br>createElement(标签名);</li>
+<li>第三步：创建文本<br>createTextNode(“字符串”);</li>
+<li>第四步：把文本添加到li下面<br>appendChild(对象名);</li>
+<li>第五步：把里添加到ul末尾<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="comment">//获取ul标签</span></div><div class="line">		<span class="keyword">var</span> ul_1 = <span class="built_in">document</span>.getElementById(<span class="string">"ulid"</span>);</div><div class="line">		<span class="comment">//创建li</span></div><div class="line">		<span class="keyword">var</span> li_1 = <span class="built_in">document</span>.createElement(<span class="string">"li"</span>);</div><div class="line">		<span class="comment">//创建文本</span></div><div class="line">		<span class="keyword">var</span> tex_1 = <span class="built_in">document</span>.createTextNode(<span class="string">"eeeee"</span>);</div><div class="line">		<span class="comment">//把文本添加到li</span></div><div class="line">		li_1.appendChild(tex_1);</div><div class="line">		<span class="comment">//把li添加到ul</span></div><div class="line">		ul_1.appendChild(li_1);</div><div class="line">	&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Element对象"><a href="#Element对象" class="headerlink" title="Element对象"></a>Element对象</h2><blockquote>
+<p>要操作element对象，首先要获取到element。(使用document里面相应的方法获取)</p>
+</blockquote>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ul>
+<li>getAttribute();获取属性</li>
+<li>setAttribute(属性,属性值);设置属性值</li>
+<li>removeAttribute(属性);删除属性。是不能删除value属性</li>
+</ul>
+<p>想要获取标签下的子标签</p>
+<ul>
+<li>使用属性childNodes,但是这个属性的兼容性很差</li>
+<li>获取标签下的子标签的唯一有效方法，使用getElementsByTagName方法<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;ul id="ulid_1"&gt;</div><div class="line">	&lt;li&gt;ad&lt;/li&gt;</div><div class="line">	&lt;li&gt;fa&lt;/li&gt;</div><div class="line">	&lt;li&gt;ad&lt;/li&gt;</div><div class="line">	&lt;li&gt;fa&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var ul_1 = document.getElementById("ulid_1");</div><div class="line">	//获取ul下面的子标签</div><div class="line">	var lis = ul_1.childNodes;</div><div class="line">	alert(lis.length);//9。谷歌浏览器</div><div class="line">	var lis = ul_1.getElementsByTagName("li");</div><div class="line">	alert(lis.length);//4</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Node对象"><a href="#Node对象" class="headerlink" title="Node对象"></a>Node对象</h2><h3 id="属性一"><a href="#属性一" class="headerlink" title="属性一"></a>属性一</h3><ul>
+<li>nodeName</li>
+<li>NameType</li>
+<li>nodeValue</li>
+</ul>
+<p>使用dom解析html时候，需要html里面的标签，属性和文本都封装成对象</p>
+<h4 id="标签节点对应的值"><a href="#标签节点对应的值" class="headerlink" title="标签节点对应的值"></a>标签节点对应的值</h4><ul>
+<li>nodeName：1</li>
+<li>NameType：SPAN</li>
+<li>nodeValue：null</li>
+</ul>
+<h4 id="属性节点对应的值"><a href="#属性节点对应的值" class="headerlink" title="属性节点对应的值"></a>属性节点对应的值</h4><ul>
+<li>nodeName：2</li>
+<li>NameType：属性名称</li>
+<li>nodeValue：属性值</li>
+</ul>
+<h4 id="文本节点对应的值"><a href="#文本节点对应的值" class="headerlink" title="文本节点对应的值"></a>文本节点对应的值</h4><ul>
+<li>nodeName：3</li>
+<li>NameType：#text</li>
+<li>nodeValue：文本值<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;span id="spanid"&gt;</div><div class="line">	我爱你</div><div class="line">&lt;/span&gt;</div><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	//获取标签的对象</div><div class="line">	var span_1 = document.getElementById("spanid");</div><div class="line">	alert(span_1.nodeType); //1</div><div class="line">	alert(span_1.nodeName); //SPAN</div><div class="line">	alert(span_1.nodeValue); //null</div><div class="line"></div><div class="line">	//属性</div><div class="line">	var id_1 = span_1.getAttributeNode("id");</div><div class="line">	alert(id_1.nodeType); //2</div><div class="line">	alert(id_1.nodeName); //id</div><div class="line">	alert(id_1.nodeValue); //spanid</div><div class="line"></div><div class="line">	//获取文本</div><div class="line">	var text_1 = span_1.firstChild;</div><div class="line">	alert(text_1.nodeType); //3</div><div class="line">	alert(text_1.nodeName); //#text</div><div class="line">	alert(text_1.nodeValue); //我爱你</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="属性二"><a href="#属性二" class="headerlink" title="属性二"></a>属性二</h3><h4 id="父节点"><a href="#父节点" class="headerlink" title="父节点"></a>父节点</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>qada<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>bbbb<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>parentNode<br>ul是li的父节点</p>
+<h4 id="子节点"><a href="#子节点" class="headerlink" title="子节点"></a>子节点</h4><p>li是ul的子节点<br>childNode:得到所有的子节点，兼容性差<br>fristChild:获取第一个节点<br>lastChild:获取最后一个节点</p>
+<h4 id="同辈节点"><a href="#同辈节点" class="headerlink" title="同辈节点"></a>同辈节点</h4><p>li之间是同辈节点<br>nextSibling:返回一个给定节点的下一个兄弟节点<br>previousSibling:返回一个给定节点的上一个兄弟节点</p>
+<h2 id="操作DOM树"><a href="#操作DOM树" class="headerlink" title="操作DOM树"></a>操作DOM树</h2><ul>
+<li><p>appendChild方法</p>
+<blockquote>
+<ul>
+<li>添加子节点到末尾</li>
+<li>特点：类似于剪切粘贴的作用</li>
+</ul>
+</blockquote>
+</li>
+<li><p>insertBefore(newNode,oldNode)方法</p>
+<blockquote>
+<ul>
+<li>在某个节点之前插入一个新的节点</li>
+<li>两个参数<ul>
+<li>1、要插入的节点</li>
+<li>2、在谁之前插入</li>
+</ul>
+</li>
+<li>插入一个节点，节点不存在，<ul>
+<li>1、创建标签</li>
+<li>2、创建文本</li>
+<li>3、把文本添加到标签下面<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">   		&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="comment">//在&lt;li&gt;大三&lt;/li&gt;之前加个&lt;li&gt;大三之前&lt;/li&gt;</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">insert1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="comment">/*</span></div><div class="line">		 * 1、获得li3标签</div><div class="line">		 * 2、创建li</div><div class="line">		 * 3、创建文本</div><div class="line">		 * 4、把文本添加到li</div><div class="line">		 * 5、获取ul</div><div class="line">		 * 6、在&lt;li&gt;大三&lt;/li&gt;之前加个&lt;li&gt;大三之前&lt;/li&gt;</div><div class="line">		 */</div><div class="line">		<span class="comment">//获得li3标签</span></div><div class="line">		<span class="keyword">var</span> li_3 = <span class="built_in">document</span>.getElementById(<span class="string">"li3"</span>);</div><div class="line">		<span class="comment">//创建要插入的li</span></div><div class="line">		<span class="keyword">var</span> li_New = <span class="built_in">document</span>.createElement(<span class="string">"li"</span>);</div><div class="line">		<span class="comment">//创建文本</span></div><div class="line">		<span class="keyword">var</span> text_New =<span class="built_in">document</span>.createTextNode(<span class="string">"大三之前"</span>);</div><div class="line">		<span class="comment">//将文本添加到新的li</span></div><div class="line">		li_New.appendChild(text_New);</div><div class="line">		<span class="comment">//获得ul</span></div><div class="line">		<span class="keyword">var</span> ul_11 = <span class="built_in">document</span>.getElementById(<span class="string">"ulid11"</span>);</div><div class="line">		<span class="comment">//将新的li插入到li3之前</span></div><div class="line">		ul_11.insertBefore(li_New,li3);</div><div class="line">	&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p>removeChild();删除节点</p>
+<blockquote>
+<ul>
+<li>通过父节点删除 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">	&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="comment">//删除li24</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">remove</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="comment">/*</span></div><div class="line">		 * 1、获得li24标签</div><div class="line">		 * 2、获得父节点ul</div><div class="line">		 * 3、执行删除</div><div class="line">		 */</div><div class="line">		<span class="comment">//获得li24标签</span></div><div class="line">		<span class="keyword">var</span> li_24 = <span class="built_in">document</span>.getElementById(<span class="string">"li24"</span>);</div><div class="line">		<span class="comment">//获得父节点ul</span></div><div class="line">		<span class="keyword">var</span> ul_21 = <span class="built_in">document</span>.getElementById(<span class="string">"ulid21"</span>);</div><div class="line">		<span class="comment">//执行删除</span></div><div class="line">		ul_21.removeChild(li_24);</div><div class="line">	&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p>replaceChild(newNode,oldNode);替换节点</p>
+<blockquote>
+<ul>
+<li>不能自己替换自己，通过父节点替换</li>
+<li>两个参数<ul>
+<li>1、第一个参数：新的节点</li>
+<li>2、第二个参数：旧的节点</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="comment">//把许嵩替换成VAE</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">replace</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="comment">/*</span></div><div class="line">		 * 1、获取到到li34</div><div class="line">		 * 2、创建新的li</div><div class="line">		 * 3、创建文本VAE</div><div class="line">		 * 4、将文本添加到新的li</div><div class="line">		 * 5、获得ul</div><div class="line">		 * 6、通过ul将许嵩替换成VAE </div><div class="line">		 */</div><div class="line">		<span class="comment">//获取到到li34</span></div><div class="line">		<span class="keyword">var</span> li_34 = <span class="built_in">document</span>.getElementById(<span class="string">"li34"</span>);</div><div class="line">		<span class="comment">//创建新的li</span></div><div class="line">		<span class="keyword">var</span> li_new = <span class="built_in">document</span>.createElement(<span class="string">"li"</span>);</div><div class="line">		<span class="comment">//创建文本VAE</span></div><div class="line">		<span class="keyword">var</span> text_new = <span class="built_in">document</span>.createTextNode(<span class="string">"VAE"</span>);</div><div class="line">		<span class="comment">//将文本添加到新的li</span></div><div class="line">		li_new.appendChild(text_new);</div><div class="line">		<span class="comment">//获得ul</span></div><div class="line">		<span class="keyword">var</span> ul_31 = <span class="built_in">document</span>.getElementById(<span class="string">"ulid31"</span>);</div><div class="line">		<span class="comment">//通过ul将许嵩替换成VAE</span></div><div class="line">		ul_31.replaceChild(li_new, li_34);</div><div class="line">	&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>cloneNode(boolean);复制节点</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="comment">//把ul列表赋值到另外一个div里面</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="comment">/*</span></div><div class="line">		 * 1、获得ul</div><div class="line">		 * 2、执行复制方法cloneNode方法复制 true</div><div class="line">		 * 3、获得div</div><div class="line">		 * 4、将复制之后的内容放到div;appendChild</div><div class="line">		 */</div><div class="line">		<span class="comment">//获得ul</span></div><div class="line">		<span class="keyword">var</span> ul_41 = <span class="built_in">document</span>.getElementById(<span class="string">"ulid41"</span>);</div><div class="line">		<span class="comment">//执行复制方法cloneNode方法复制 true</span></div><div class="line">		<span class="keyword">var</span> ul_clone = ul_41.cloneNode(<span class="literal">true</span>);</div><div class="line">		<span class="comment">//获得div</span></div><div class="line">		<span class="keyword">var</span> div_4 = <span class="built_in">document</span>.getElementById(<span class="string">"div4"</span>);</div><div class="line">		<span class="comment">//将复制之后的内容放到div;appendChild()</span></div><div class="line">		div_4.appendChild(ul_clone);</div><div class="line">	&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="innerHTML属性"><a href="#innerHTML属性" class="headerlink" title="innerHTML属性"></a>innerHTML属性</h2><p>不是DOM的组成部分，但是大多数的浏览器都支持</p>
+<ul>
+<li>第一个作用：获取文本内容</li>
+<li>第二个作用：向标签里面来设置内容(可以是HTML代码)</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="comment">//获取span标签</span></div><div class="line">	<span class="keyword">var</span> span_1 = <span class="built_in">document</span>.getElementById(<span class="string">"sid"</span>);</div><div class="line">	<span class="comment">//alert(span_1.innerHTML);//获得我爱你</span></div><div class="line">	</div><div class="line">	<span class="comment">//向div设置内容&lt;h1&gt;LOVE&lt;/h1&gt;</span></div><div class="line">	<span class="keyword">var</span> div_5 = <span class="built_in">document</span>.getElementById(<span class="string">"div5"</span>);</div><div class="line">	div_5.innerHTML = <span class="string">"&lt;h1&gt;LOVE&lt;/h1&gt;"</span>;</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<h2 id="动态显示时间"><a href="#动态显示时间" class="headerlink" title="动态显示时间"></a>动态显示时间</h2><p>得到当前时间<br>var date = new Date();<br>var d1 = date.toLocalString<br>需要让页面每一秒获取时间<br>setInterval()方法  定时器<br>显示到页面<br>使用innerHTML属性<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="comment">//得到当前时间</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">getDate</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="comment">//当前时间</span></div><div class="line">		<span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">		<span class="comment">//格式化</span></div><div class="line">		<span class="keyword">var</span> dateTime = date.toLocaleString();</div><div class="line">		<span class="comment">//获得div</span></div><div class="line">		<span class="keyword">var</span> div_6 = <span class="built_in">document</span>.getElementById(<span class="string">"time"</span>);</div><div class="line">		div_6.innerHTML = dateTime;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">//使用定时器实现每秒写一次时间</span></div><div class="line">	setInterval(<span class="string">"getDate();"</span>,<span class="number">1000</span>);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
+<h2 id="全选练习"><a href="#全选练习" class="headerlink" title="全选练习"></a>全选练习</h2><ul>
+<li>创建一个页面<ul>
+<li>复选框和按钮<ul>
+<li>四个复选框表示爱好</li>
+<li>还有一个复选框操作 全选和全不选</li>
+</ul>
+</li>
+<li>三个按钮<ul>
+<li>全选、全不选、反选 </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="comment">//实现全选</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">selAll</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="comment">/*</span></div><div class="line">		 * 1、获取要操作的复选框；使用getElementsByName();</div><div class="line">		 * 2、返回数组</div><div class="line">		 * 3、选中</div><div class="line">		 *   属性  checked判断复选框是否选中</div><div class="line">		 * 	  	  checked = true;//表示选中</div><div class="line">		 * 		  checked = false;//表示没选中 </div><div class="line">		 *   遍历数组，得到每一个checkbox;把每一个checkbox的属性checked = true;</div><div class="line">		 */</div><div class="line">		<span class="comment">//获取要操作的复选框</span></div><div class="line">		<span class="keyword">var</span> checkboxs = <span class="built_in">document</span>.getElementsByName(<span class="string">"love"</span>);</div><div class="line">		<span class="comment">//遍历数组，得到每一个checkbox;把每一个checkbox的属性checked = true;</span></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; checkboxs.length; i++) &#123;</div><div class="line">			<span class="keyword">var</span> love = checkboxs[i];</div><div class="line">			love.checked = <span class="literal">true</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">//实现全不选</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">selAllNo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="comment">//得到操作的复选框				</span></div><div class="line">		<span class="keyword">var</span> checkboxs = <span class="built_in">document</span>.getElementsByName(<span class="string">"love"</span>);</div><div class="line">		<span class="comment">//遍历数组，得到每一个checkbox;把每一个checkbox的属性checked = false;</span></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; checkboxs.length; i++) &#123;</div><div class="line">			<span class="keyword">var</span> love = checkboxs[i];</div><div class="line">			love.checked = <span class="literal">false</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">//实现反选</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">selOthers</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="comment">/*</span></div><div class="line">		 * 1、获取要操作的复选框；</div><div class="line">		 * 2、遍历数组，得到每一个复选框，</div><div class="line">		 * 并判断checked的值，将true改为false，将false改为true</div><div class="line">		 */</div><div class="line">		<span class="keyword">var</span> checkboxs = <span class="built_in">document</span>.getElementsByName(<span class="string">"love"</span>);</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; checkboxs.length; j++) &#123;</div><div class="line">			<span class="keyword">var</span> love = checkboxs[j];</div><div class="line">			<span class="keyword">if</span>(love.checked == <span class="literal">true</span>) &#123;</div><div class="line">				love.checked = <span class="literal">false</span>;</div><div class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span>(love.checked == <span class="literal">false</span>) &#123;</div><div class="line">				love.checked = <span class="literal">true</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">//全选\全不选</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">selAll0rNo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="comment">/*</span></div><div class="line">		 * 1、获取这个的复选框</div><div class="line">		 * 2、判断这个复选框是否选中</div><div class="line">		 * 		没选中:执行selAllno()</div><div class="line">		 * 		选中:执行selAll()</div><div class="line">		 */</div><div class="line">		<span class="keyword">var</span> checkbox_1 = <span class="built_in">document</span>.getElementById(<span class="string">"cbox"</span>);</div><div class="line">		<span class="keyword">if</span>(checkbox_1.checked == <span class="literal">false</span>)&#123;</div><div class="line">			selAllNo();</div><div class="line">		&#125;<span class="keyword">else</span>&#123;</div><div class="line">			selAll();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="下拉列表左右选择"><a href="#下拉列表左右选择" class="headerlink" title="下拉列表左右选择"></a>下拉列表左右选择</h2><ul>
+<li>创建一个页面<ul>
+<li>两个下拉选择框<ul>
+<li>设置属性 multiple属性</li>
+</ul>
+</li>
+<li>四个按钮</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="comment">//获取select1里面的option；</span></div><div class="line">	<span class="keyword">var</span> select_1 = <span class="built_in">document</span>.getElementById(<span class="string">"select1"</span>);</div><div class="line">	<span class="keyword">var</span> options_1 = select_1.getElementsByTagName(<span class="string">"option"</span>);</div><div class="line">	<span class="comment">//获取select2里面的option；</span></div><div class="line">	<span class="keyword">var</span> select_2 = <span class="built_in">document</span>.getElementById(<span class="string">"select2"</span>);</div><div class="line">	<span class="keyword">var</span> options_2 = select_2.getElementsByTagName(<span class="string">"option"</span>);</div><div class="line">	<span class="comment">//选中添加到右边</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">selToRight</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="comment">/*</span></div><div class="line">		 * 1、获取select1里面的option；</div><div class="line">		 * 		getElementsTagName()返回数组</div><div class="line">		 * 		遍历数组得到每一个option</div><div class="line">		 * 2、判断option是否被选中</div><div class="line">		 * 		属性 selected</div><div class="line">		 * 			selected = true;选中</div><div class="line">		 * 			selected = false;没选中</div><div class="line">		 * 3、如果是选中把选择的添加到有右边去</div><div class="line">		 * 		得到选中的select2，通过appendChild添加到右边</div><div class="line">		 */</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; options_1.length; i++) &#123;</div><div class="line">			<span class="comment">//alert("i=" + i);//测试</span></div><div class="line">			<span class="comment">//alert("length=" + options_1.length);//测试</span></div><div class="line">			<span class="keyword">var</span> option_1 = options_1[i];</div><div class="line">			<span class="keyword">if</span>(option_1.selected == <span class="literal">true</span>) &#123;</div><div class="line">				select_2.appendChild(option_1);</div><div class="line">				i--;</div><div class="line">				<span class="comment">/* 因为第一次循环后,i=1,如果添加过去了,</span></div><div class="line">				 * length的值就减小1,options_1数组的下标就改变了，</div><div class="line">				 * 将取不到此时options_1数组的第一个元素，就是options_1[0];</div><div class="line">				 * (自己的判断,视频里说的我感觉不好理解)</div><div class="line">				 */</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">//全部添加到右边</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">allToRight</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; options_1.length; i++) &#123;</div><div class="line">			<span class="keyword">var</span> option_1 = options_1[i];</div><div class="line">			select_2.appendChild(option_1);</div><div class="line">			i--;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">//选中添加到左边，与右类似</span></div><div class="line">	<span class="comment">//全部添加到左边，与右类似</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="省市联动"><a href="#省市联动" class="headerlink" title="省市联动"></a>省市联动</h2><ul>
+<li>创建一个页面，有两个下拉列表</li>
+<li>在第一个下拉框里面有一个事件：改变事件 onchange事件</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="comment">//创建一个数组存储数据</span></div><div class="line">	<span class="comment">//二维数组</span></div><div class="line">	<span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">4</span>);</div><div class="line">	arr[<span class="number">0</span>] = [<span class="string">"中国"</span>, <span class="string">"南京"</span>, <span class="string">"黄山"</span>, <span class="string">"宿州"</span>, <span class="string">"杭州"</span>];</div><div class="line">	arr[<span class="number">1</span>] = [<span class="string">"美国"</span>, <span class="string">"纽约"</span>, <span class="string">"华盛顿"</span>, <span class="string">"芝加哥"</span>, <span class="string">"洛杉矶"</span>];</div><div class="line">	arr[<span class="number">2</span>] = [<span class="string">"英国"</span>, <span class="string">"伦敦"</span>, <span class="string">"曼彻斯特"</span>, <span class="string">"曼斯顿"</span>, <span class="string">"威斯崔"</span>, <span class="string">"方登修道院"</span>];</div><div class="line">	arr[<span class="number">3</span>] = [<span class="string">"日本"</span>, <span class="string">"东京"</span>, <span class="string">"大阪"</span>, <span class="string">"名古屋"</span>, <span class="string">"京都"</span>, <span class="string">"神户"</span>];</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">select</span>(<span class="params">val</span>) </span>&#123;</div><div class="line">		<span class="comment">/*</span></div><div class="line">		 * 1、遍历二维数组</div><div class="line">		 * 2、得到也是一个数组</div><div class="line">		 * 3、拿到数组中的第一个值和传递过来的值比较</div><div class="line">		 * 4、如果相同，获得第一个值后面的元素</div><div class="line">		 * 5、得到city的select</div><div class="line">		 * 6、添加过去</div><div class="line">		 * 		创建option(三步)</div><div class="line">		 * </div><div class="line">		 * 注意：</div><div class="line">		 * 由于是追加入option标签</div><div class="line">		 * 所以每次要进行判断city里面是否有option，如果有删除</div><div class="line">		 */</div><div class="line">		<span class="comment">//得到city的select</span></div><div class="line">		<span class="keyword">var</span> city1 = <span class="built_in">document</span>.getElementById(<span class="string">"city"</span>);</div><div class="line">		<span class="comment">//得到select下面的option</span></div><div class="line">		<span class="keyword">var</span> option_old = city1.getElementsByTagName(<span class="string">"option"</span>);</div><div class="line">		<span class="comment">//遍历删除</span></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; option_old.length; j++) &#123;</div><div class="line">			<span class="keyword">var</span> value_old = option_old[j];</div><div class="line">			city1.removeChild(value_old);</div><div class="line">			j--;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="comment">//遍历二维数组</span></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">			<span class="comment">//得到二维数组的元素</span></div><div class="line">			<span class="keyword">var</span> arr_tmp = arr[i];</div><div class="line">			<span class="comment">//遍历之后得到的数组的第一个值</span></div><div class="line">			<span class="keyword">var</span> firstvalue = arr_tmp[<span class="number">0</span>];</div><div class="line">			<span class="comment">//判断第一个值和传递过来的值是否相同</span></div><div class="line">			<span class="keyword">if</span>(firstvalue == val) &#123;</div><div class="line">				<span class="keyword">for</span>(j = <span class="number">1</span>; j &lt; arr_tmp.length; j++) &#123;</div><div class="line">					<span class="keyword">var</span> value1 = arr_tmp[j];</div><div class="line">					<span class="comment">//创建option标签</span></div><div class="line">					<span class="keyword">var</span> options = <span class="built_in">document</span>.createElement(<span class="string">"option"</span>);</div><div class="line">					<span class="comment">//创建文本</span></div><div class="line">					<span class="keyword">var</span> tex = <span class="built_in">document</span>.createTextNode(value1)</div><div class="line">					<span class="comment">//将文本插入option标签</span></div><div class="line">					options.appendChild(tex);</div><div class="line">					<span class="comment">//将option标签插入select</span></div><div class="line">					city1.appendChild(options);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">	&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="动态生成表格"><a href="#动态生成表格" class="headerlink" title="动态生成表格"></a>动态生成表格</h2><ul>
+<li>创建一个页面:一个按钮和两个输入框<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">create</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="comment">/*</span></div><div class="line">		 * 1、获取行列的值</div><div class="line">		 * 2、根据行列的值创建表格  行tr  列td</div><div class="line">		 * 3、向div加入行tr  innerHTML</div><div class="line">		 * 		向行tr中加入列col</div><div class="line">		 */</div><div class="line">		<span class="keyword">var</span> div_Ele = <span class="built_in">document</span>.getElementById(<span class="string">"div"</span>);</div><div class="line">		<span class="keyword">var</span> row_val = <span class="built_in">document</span>.getElementById(<span class="string">"row"</span>).value;</div><div class="line">		<span class="keyword">var</span> col_val = <span class="built_in">document</span>.getElementById(<span class="string">"col"</span>).value;</div><div class="line">		<span class="keyword">var</span> tab = <span class="string">"&lt;table&gt;"</span>;</div><div class="line">		<span class="comment">//循环行</span></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; row_val; i++) &#123;</div><div class="line">			tab += <span class="string">"&lt;tr&gt;"</span>;</div><div class="line">			<span class="comment">//循环列</span></div><div class="line">			<span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; col_val; j++) &#123;</div><div class="line">				tab += <span class="string">"&lt;td&gt;love&lt;/td&gt;"</span></div><div class="line">			&#125;</div><div class="line">			tab += <span class="string">"&lt;/tr&gt;"</span></div><div class="line">		&#125;</div><div class="line">		tab += <span class="string">"&lt;/table&gt;"</span>;</div><div class="line">		div_Ele.innerHTML = tab;</div><div class="line">	&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure></li>
+</ul>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/09/javascriptNote/表单提交/" rel="prev">javaScript表单提交</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/09/javascriptNote/javascript基础对象/" rel="next">javaScript基础对象</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div>
+      
+        <style type="text/css">
+
+    .donate_bar {
+        text-align: center;
+        margin-top : 5%;
+    }
+
+    .donate_bar.hidden {
+        display:none;
+    }
+/*
+    .donate_bar a.btn_donate {
+        display: inline-block;
+        width: 82px;
+        height: 82px;
+        margin-left:auto;
+        margin-right:auto;
+
+        background: url("http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif") no-repeat;
+        _background: url("http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif") no-repeat; 
+
+        -webkit-transition: background 0s;
+        -moz-transition: background 0s;
+        -o-transition: background 0s;
+        -ms-transition: background 0s;
+        transition: background 0s;
+    }
+*/
+    .donate_bar a.btn_donate:hover { 
+        // background-position: 0px -82px;
+        color: #87daff;
+    }
+
+    .donate_bar .donate_txt {
+        display: block;
+        color: #9d9d9d;
+        font: 14px/2 "Microsoft Yahei";
+    }
+
+    .bold { 
+        font-weight: bold; 
+    }
+
+    .post-donate a {
+        border-bottom: 0px;
+    }
+
+    #donate_guide table {
+        border: none;
+    }
+
+    #donate_guide td {
+        border-bottom: none;
+        border-right: none;
+        // background: #333333;
+        valign: top;
+    }
+
+</style>
+
+
+
+      
+    </div>
+
+    <div class="post-spread">
+      
+        <div class="bdsharebuttonbox">
+	<a href="#" class="bds_more" data-cmd="more"></a>
+	<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+	<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+	<a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2017/08/09/javascriptNote/javascript的DOM/"
+                   data-title="javaScript的DOM" data-url="http://yoursite.com/2017/08/09/javascriptNote/javascript的DOM/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/uploads/avatar.png" alt="WH" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">WH</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">世间安得双全法，宁负如来不负卿</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            
+              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-name">标签</span>
+              
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yeweihang/yeweihang.github.io" target="_blank">GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/5555348681?refer_flag=1001030201_&is_all=1" target="_blank">微博</a>
+              </span>
+            
+          
+        </div>
+
+        <div class="links-of-friendly motion-element">
+          
+        </div>
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础对象"><span class="nav-number">1.</span> <span class="nav-text">基础对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#js的dom对象"><span class="nav-number">1.1.</span> <span class="nav-text">js的dom对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DHTML"><span class="nav-number">1.1.1.</span> <span class="nav-text">DHTML</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#document对象"><span class="nav-number">1.1.2.</span> <span class="nav-text">document对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用方法"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">常用方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Element对象"><span class="nav-number">1.2.</span> <span class="nav-text">Element对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node对象"><span class="nav-number">1.3.</span> <span class="nav-text">Node对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#属性一"><span class="nav-number">1.3.1.</span> <span class="nav-text">属性一</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#标签节点对应的值"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">标签节点对应的值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性节点对应的值"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">属性节点对应的值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文本节点对应的值"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">文本节点对应的值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性二"><span class="nav-number">1.3.2.</span> <span class="nav-text">属性二</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#父节点"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">父节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子节点"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">子节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同辈节点"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">同辈节点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作DOM树"><span class="nav-number">1.4.</span> <span class="nav-text">操作DOM树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#innerHTML属性"><span class="nav-number">1.5.</span> <span class="nav-text">innerHTML属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态显示时间"><span class="nav-number">1.6.</span> <span class="nav-text">动态显示时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全选练习"><span class="nav-number">1.7.</span> <span class="nav-text">全选练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下拉列表左右选择"><span class="nav-number">1.8.</span> <span class="nav-text">下拉列表左右选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#省市联动"><span class="nav-number">1.9.</span> <span class="nav-text">省市联动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态生成表格"><span class="nav-number">1.10.</span> <span class="nav-text">动态生成表格</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">WH</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="">
+    NexT.Mala
+  </a>
+</div>
+<div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_uv">有<span id="busuanzi_value_site_uv"></span>人访问</span>
+</div> </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yeweihang"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
