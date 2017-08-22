@@ -37,53 +37,23 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="2017/8/13 星期日 下午 1:45:16 
-订单商品模型
-数据模型分析思路1、每张表记录的数据内容
-&amp;gt; 分模块对每张表记录的内容进行熟悉，相当于你学习系统需求的过程
-2、每张表重要的字段设置
-&amp;gt; 非空字段、外键字段
-3、数据库级别表与表之间的关系
-&amp;gt; 外键关系
-4、表与表之间的业务关系
-&amp;gt; 在分析表与表之间的业务关系是一定要建立**在某个业务意义基础上去分析**
-数">
+<meta name="description" content="订单商品模型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="叶苇杭的个人主页">
+<meta property="og:title" content="mybatis进阶">
 <meta property="og:url" content="http://yoursite.com/2017/08/22/mybatis/mybatis进阶/index.html">
 <meta property="og:site_name" content="叶苇杭的个人主页">
-<meta property="og:description" content="2017/8/13 星期日 下午 1:45:16 
-订单商品模型
-数据模型分析思路1、每张表记录的数据内容
-&amp;gt; 分模块对每张表记录的内容进行熟悉，相当于你学习系统需求的过程
-2、每张表重要的字段设置
-&amp;gt; 非空字段、外键字段
-3、数据库级别表与表之间的关系
-&amp;gt; 外键关系
-4、表与表之间的业务关系
-&amp;gt; 在分析表与表之间的业务关系是一定要建立**在某个业务意义基础上去分析**
-数">
-<meta property="og:image" content="http://i.imgur.com/fhjksd9.png">
-<meta property="og:image" content="http://i.imgur.com/0ELBtKp.png">
-<meta property="og:image" content="http://i.imgur.com/ZD6g7aH.png">
-<meta property="og:image" content="http://i.imgur.com/8tjen8U.png">
-<meta property="og:image" content="http://i.imgur.com/NB8MY6x.png">
-<meta property="og:image" content="http://i.imgur.com/qDt2Jkn.png">
-<meta property="og:updated_time" content="2017-08-15T13:01:58.188Z">
+<meta property="og:description" content="订单商品模型">
+<meta property="og:image" content="http://yoursite.com/img/database.png">
+<meta property="og:image" content="http://yoursite.com/img/model.png">
+<meta property="og:image" content="http://yoursite.com/img/table.png">
+<meta property="og:image" content="http://yoursite.com/img/cache.png">
+<meta property="og:image" content="http://yoursite.com/img/onecache.png">
+<meta property="og:image" content="http://yoursite.com/img/twocache.png">
+<meta property="og:updated_time" content="2017-08-22T08:00:56.016Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="叶苇杭的个人主页">
-<meta name="twitter:description" content="2017/8/13 星期日 下午 1:45:16 
-订单商品模型
-数据模型分析思路1、每张表记录的数据内容
-&amp;gt; 分模块对每张表记录的内容进行熟悉，相当于你学习系统需求的过程
-2、每张表重要的字段设置
-&amp;gt; 非空字段、外键字段
-3、数据库级别表与表之间的关系
-&amp;gt; 外键关系
-4、表与表之间的业务关系
-&amp;gt; 在分析表与表之间的业务关系是一定要建立**在某个业务意义基础上去分析**
-数">
-<meta name="twitter:image" content="http://i.imgur.com/fhjksd9.png">
+<meta name="twitter:title" content="mybatis进阶">
+<meta name="twitter:description" content="订单商品模型">
+<meta name="twitter:image" content="http://yoursite.com/img/database.png">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -93,7 +63,7 @@
   };
 </script>
 
-  <title>  | 叶苇杭的个人主页 </title>
+  <title> mybatis进阶 | 叶苇杭的个人主页 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -218,7 +188,7 @@
           
           
             
-              
+              mybatis进阶
             
           
         </h1>
@@ -227,11 +197,26 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2017-08-22T12:01:00+08:00" content="2017-08-22">
+          <time itemprop="dateCreated" datetime="2017-08-22T15:02:39+08:00" content="2017-08-22">
             2017-08-22
           </time>
         </span>
 
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/mybatis/" itemprop="url" rel="index">
+                  <span itemprop="name">mybatis</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
         
 
         
@@ -258,8 +243,7 @@
       
 
       
-        <span itemprop="articleBody"><p>2017/8/13 星期日 下午 1:45:16 </p>
-<h1 id="订单商品模型"><a href="#订单商品模型" class="headerlink" title="订单商品模型"></a>订单商品模型</h1><p><img src="http://i.imgur.com/fhjksd9.png" alt=""></p>
+        <span itemprop="articleBody"><h1 id="订单商品模型"><a href="#订单商品模型" class="headerlink" title="订单商品模型"></a>订单商品模型</h1><p><img src="/img/database.png" alt=""><br><a id="more"></a></p>
 <h2 id="数据模型分析思路"><a href="#数据模型分析思路" class="headerlink" title="数据模型分析思路"></a>数据模型分析思路</h2><p>1、每张表记录的数据内容</p>
 <pre><code>&gt; 分模块对每张表记录的内容进行熟悉，相当于你学习系统需求的过程
 </code></pre><p>2、每张表重要的字段设置</p>
@@ -268,7 +252,7 @@
 <pre><code>&gt; 外键关系
 </code></pre><p>4、表与表之间的业务关系</p>
 <pre><code>&gt; 在分析表与表之间的业务关系是一定要建立**在某个业务意义基础上去分析**
-</code></pre><h3 id="数据模型分析"><a href="#数据模型分析" class="headerlink" title="数据模型分析"></a>数据模型分析</h3><p><img src="http://i.imgur.com/0ELBtKp.png" alt=""></p>
+</code></pre><h3 id="数据模型分析"><a href="#数据模型分析" class="headerlink" title="数据模型分析"></a>数据模型分析</h3><p><img src="/img/model.png" alt=""></p>
 <p>用户表：user<br>    记录了购买商品的用户信息<br>订单表：order<br>    记录了订单的详细信息即购买商品的信息<br>商品表：items<br>    记录了商品信息</p>
 <p>表与表之间的业务关系</p>
 <blockquote>
@@ -311,7 +295,7 @@
 <p><strong>resultType和resultMap实现一对一查询小结</strong><br>实现一对一查询<br>resultType：使用resultType实现较为简单，如果pojo中没有包括查询出来的列名，需要增加列名对应的属性，即可完成映射<br>如果对查询结果没有特殊要求建议使用resultType<br>resultMap：需要单独定义resultMap，实现有点麻烦，如果对查询结果没有特殊的要求，使用resultMap可以完成将关联查询映射pojo的属性中<br>resultMap可以实现延迟加载，resultType无法实现延迟加载</p>
 <h2 id="一对多查询"><a href="#一对多查询" class="headerlink" title="一对多查询"></a>一对多查询</h2><p>需求：<br>查询订单及订单明细的信息</p>
 <h3 id="sql语句-1"><a href="#sql语句-1" class="headerlink" title="sql语句"></a>sql语句</h3><p>确定主查询表：订单表<br>确定关联查询表：订单明细表<br>在一对一查询基础上添加订单明细关联即可<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> </div><div class="line">  orders.*,</div><div class="line">  USER.username,</div><div class="line">  USER.sex,</div><div class="line">  USER.address,</div><div class="line">  orderdetail.id orderdetail_id,</div><div class="line">  orderdetail.items_id,</div><div class="line">  orderdetail.items_num,</div><div class="line">  orderdetail.orders_id</div><div class="line"><span class="keyword">FROM</span></div><div class="line">  orders,</div><div class="line">  <span class="keyword">USER</span>,</div><div class="line">  orderdetail</div><div class="line"><span class="keyword">WHERE</span> orders.user_id = user.id <span class="keyword">AND</span> orderdetail.orders_id=orders.id</div></pre></td></tr></table></figure></p>
-<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>使用resultType将上边的查询结果映射到pojo中，订单信息的就是重复<br><img src="http://i.imgur.com/ZD6g7aH.png" alt=""></p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>使用resultType将上边的查询结果映射到pojo中，订单信息的就是重复<br><img src="/img/table.png" alt=""></p>
 <p>要求：<br>对Orders映射不能出现重复记录</p>
 <p>在orders.java类中添加private List<orderdetail> orderdetails属性<br>最终会将订单信息映射到Orders中，订单所对应的订单明细映射到Orders中的orderdetails属性中</orderdetail></p>
 <p>映射成的Orders记录数为两条(Orders信息不能重复)<br>每个Orders中的orderdetails属性存储了该订单多对应的订单明细</p>
@@ -332,8 +316,7 @@
 <p><strong>小结</strong><br>mybatis使用resultMap的collection对关联查询的多条记录映射到一个list集合属性中</p>
 <p>使用resultType实现：<br>将订单明细映射到Orderdetails中，需要自己处理，使用双重循环遍历去掉重复记录，将订单明细放在Orderdetails中</p>
 <h2 id="多对多查询"><a href="#多对多查询" class="headerlink" title="多对多查询"></a>多对多查询</h2><p>需求：<br>查询用户及用户购买商品信息</p>
-<h3 id="sql语句-2"><a href="#sql语句-2" class="headerlink" title="sql语句"></a>sql语句</h3><p>查询主表是：用户表<br>关联表：由于用户和商品没有直接关联，通过订单和订单明细进行关联，所以关联表：<br>orders、orderdetail、items</p>
-<p>SELECT<br> orders.*,<br> user.username,<br> user.sex,<br> user.address,<br> orderdetail.id orderdetail_id,<br> orderdetail.items_id,<br> orderdetail.items_num,<br> orderdetail.orders_id,<br> items.name items_name,<br> items.detail items_detail,<br> items.price items_price<br>FROM<br> orders,<br> USER,<br> orderdetail,<br> items<br>WHERE<br> orders.user_id=user.id AND orderdetail.orders_id=orders.id AND orderdetail.items_id=items.id</p>
+<h3 id="sql语句-2"><a href="#sql语句-2" class="headerlink" title="sql语句"></a>sql语句</h3><p>查询主表是：用户表<br>关联表：由于用户和商品没有直接关联，通过订单和订单明细进行关联，所以关联表：<br>orders、orderdetail、items<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> </div><div class="line"> orders.*,</div><div class="line"> user.username,</div><div class="line"> user.sex,</div><div class="line"> user.address,</div><div class="line"> orderdetail.id orderdetail_id,</div><div class="line"> orderdetail.items_id,</div><div class="line"> orderdetail.items_num,</div><div class="line"> orderdetail.orders_id,</div><div class="line"> items.name items_name,</div><div class="line"> items.detail items_detail,</div><div class="line"> items.price items_price</div><div class="line"><span class="keyword">FROM</span></div><div class="line"> orders,</div><div class="line"> <span class="keyword">USER</span>,</div><div class="line"> orderdetail,</div><div class="line"> items</div><div class="line"><span class="keyword">WHERE</span></div><div class="line"> orders.user_id=user.id <span class="keyword">AND</span> orderdetail.orders_id=orders.id <span class="keyword">AND</span> orderdetail.items_id=items.id</div></pre></td></tr></table></figure></p>
 <h3 id="映射思路"><a href="#映射思路" class="headerlink" title="映射思路"></a>映射思路</h3><p>将用户信息映射到user中。<br>在user类中添加订单列表属性List<orders> orderslist<br>在Orders中添加订单明细列表属性List<orderdetail> orderdetail，将订单的明细映射到orderdetails<br>在orderDetail中添加items属性，将订单明细所对应的商品映射到items</orderdetail></orders></p>
 <h3 id="编写statement"><a href="#编写statement" class="headerlink" title="编写statement"></a>编写statement</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">    <span class="comment">&lt;!--查询用户及购买信息--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"findUserAndItemsResultMap"</span> <span class="attr">resultMap</span>=<span class="string">"UserAndItemsResultMap"</span>&gt;</span></div><div class="line">        SELECT</div><div class="line"> orders.*,</div><div class="line"> user.username,</div><div class="line"> user.sex,</div><div class="line"> user.address,</div><div class="line"> orderdetail.id orderdetail_id,</div><div class="line"> orderdetail.items_id,</div><div class="line"> orderdetail.items_num,</div><div class="line"> orderdetail.orders_id,</div><div class="line"> items.name items_name,</div><div class="line"> items.detail items_detail,</div><div class="line"> items.price items_price</div><div class="line">FROM</div><div class="line"> orders,</div><div class="line"> USER,</div><div class="line"> orderdetail,</div><div class="line"> items</div><div class="line">WHERE</div><div class="line"> orders.user_id=user.id AND orderdetail.orders_id=orders.id AND orderdetail.items_id=items.id</div><div class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></div></pre></td></tr></table></figure>
 <h3 id="定义resultMap"><a href="#定义resultMap" class="headerlink" title="定义resultMap"></a>定义resultMap</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--查询用户及购买信息--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">type</span>=<span class="string">"User"</span> <span class="attr">id</span>=<span class="string">"UserAndItemsResultMap"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 用户信息 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">id</span> <span class="attr">column</span>=<span class="string">"user_id"</span> <span class="attr">property</span>=<span class="string">"id"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"username"</span> <span class="attr">property</span>=<span class="string">"username"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"sex"</span> <span class="attr">property</span>=<span class="string">"sex"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"address"</span> <span class="attr">property</span>=<span class="string">"address"</span>/&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- 订单信息</span></div><div class="line">    一个用户对应多个订单，使用collection映射</div><div class="line">     --&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">collection</span> <span class="attr">property</span>=<span class="string">"ordersList"</span> <span class="attr">ofType</span>=<span class="string">"Orders"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">id</span> <span class="attr">column</span>=<span class="string">"id"</span> <span class="attr">property</span>=<span class="string">"id"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"user_id"</span> <span class="attr">property</span>=<span class="string">"userId"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"number"</span> <span class="attr">property</span>=<span class="string">"number"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"createtime"</span> <span class="attr">property</span>=<span class="string">"createtime"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"note"</span> <span class="attr">property</span>=<span class="string">"note"</span>/&gt;</span></div><div class="line"></div><div class="line">        <span class="comment">&lt;!-- 订单明细</span></div><div class="line">    一个订单包括 多个明细</div><div class="line">     --&gt;</div><div class="line">        <span class="tag">&lt;<span class="name">collection</span> <span class="attr">property</span>=<span class="string">"orderdetails"</span> <span class="attr">ofType</span>=<span class="string">"Orderdetail"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">id</span> <span class="attr">column</span>=<span class="string">"orderdetail_id"</span> <span class="attr">property</span>=<span class="string">"id"</span>/&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"items_id"</span> <span class="attr">property</span>=<span class="string">"itemsId"</span>/&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"items_num"</span> <span class="attr">property</span>=<span class="string">"itemsNum"</span>/&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"orders_id"</span> <span class="attr">property</span>=<span class="string">"ordersId"</span>/&gt;</span></div><div class="line"></div><div class="line">            <span class="comment">&lt;!-- 商品信息</span></div><div class="line">     一个订单明细对应一个商品</div><div class="line">      --&gt;</div><div class="line">            <span class="tag">&lt;<span class="name">association</span> <span class="attr">property</span>=<span class="string">"items"</span> <span class="attr">javaType</span>=<span class="string">"Items"</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">id</span> <span class="attr">column</span>=<span class="string">"items_id"</span> <span class="attr">property</span>=<span class="string">"id"</span>/&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"items_name"</span> <span class="attr">property</span>=<span class="string">"name"</span>/&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"items_detail"</span> <span class="attr">property</span>=<span class="string">"detail"</span>/&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"items_price"</span> <span class="attr">property</span>=<span class="string">"price"</span>/&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">association</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">collection</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">collection</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -367,16 +350,16 @@
 </ul>
 <h4 id="延迟加载小结"><a href="#延迟加载小结" class="headerlink" title="延迟加载小结"></a>延迟加载小结</h4><p>不使用mybatis提供的association及collection中的延迟加载功能，如何实现延迟加载<br>实现方法如下：<br>1、查询订单列表<br>2、根据用户id查询用户信息<br>实现思路：<br>先去查询第一个Mapper方法，获取订单信息列表<br>在程序中（service），按需去调用第二个mapper方法区查询用户信息</p>
 <p><strong>总之</strong><br>使用延迟加载方法，先去查询简单的sql（最好单表，也可以关联查询），再去按需要加载关联查询其他信息</p>
-<h2 id="查询缓存"><a href="#查询缓存" class="headerlink" title="查询缓存"></a>查询缓存</h2><h3 id="什么是查询缓存"><a href="#什么是查询缓存" class="headerlink" title="什么是查询缓存"></a>什么是查询缓存</h3><p>mybatis提供查询缓存，用于减轻数据压力，提高数据库性能。<br>mybatis提供一级缓存和二级缓存<br><img src="http://i.imgur.com/8tjen8U.png" alt=""><br>一级缓存是SqlSession级别的缓存。在操作数据库时需要构造 sqlSession对象，在对象中有一个数据结构（HashMap）用于存储缓存数据。不同的sqlSession之间的缓存数据区域（HashMap）是互相不影响的。</p>
+<h2 id="查询缓存"><a href="#查询缓存" class="headerlink" title="查询缓存"></a>查询缓存</h2><h3 id="什么是查询缓存"><a href="#什么是查询缓存" class="headerlink" title="什么是查询缓存"></a>什么是查询缓存</h3><p>mybatis提供查询缓存，用于减轻数据压力，提高数据库性能。<br>mybatis提供一级缓存和二级缓存<br><img src="/img/cache.png" alt=""><br>一级缓存是SqlSession级别的缓存。在操作数据库时需要构造 sqlSession对象，在对象中有一个数据结构（HashMap）用于存储缓存数据。不同的sqlSession之间的缓存数据区域（HashMap）是互相不影响的。</p>
 <p>二级缓存是mapper级别的缓存，多个SqlSession去操作同一个Mapper的sql语句，多个SqlSession可以共用二级缓存，二级缓存是跨SqlSession的。</p>
 <p>为什么要用缓存？<br>如果缓存中有数据就不用从数据库中获取，大大提高系统性能</p>
-<h3 id="一级缓存"><a href="#一级缓存" class="headerlink" title="一级缓存"></a>一级缓存</h3><h4 id="一级缓存工作原理"><a href="#一级缓存工作原理" class="headerlink" title="一级缓存工作原理"></a>一级缓存工作原理</h4><p><img src="http://i.imgur.com/NB8MY6x.png" alt=""><br>第一次发起查询用户id为1的用户信息，先去找缓存中是否有id为1的用户信息，如果没有，从数据库查询用户信息。<br>得到用户信息，将用户信息存储到一级缓存中。</p>
+<h3 id="一级缓存"><a href="#一级缓存" class="headerlink" title="一级缓存"></a>一级缓存</h3><h4 id="一级缓存工作原理"><a href="#一级缓存工作原理" class="headerlink" title="一级缓存工作原理"></a>一级缓存工作原理</h4><p><img src="/img/onecache.png" alt=""><br>第一次发起查询用户id为1的用户信息，先去找缓存中是否有id为1的用户信息，如果没有，从数据库查询用户信息。<br>得到用户信息，将用户信息存储到一级缓存中。</p>
 <p>如果sqlSession去执行commit操作（执行插入、更新、删除），清空SqlSession中的一级缓存，这样做的目的为了让缓存中存储的是最新的信息，避免脏读。</p>
 <p>第二次发起查询用户id为1的用户信息，先去找缓存中是否有id为1的用户信息，缓存中有，直接从缓存中获取用户信息</p>
 <h4 id="一级缓存测试"><a href="#一级缓存测试" class="headerlink" title="一级缓存测试"></a>一级缓存测试</h4><p>mybatis默认支持一级缓存，不需要在配置文件中去配置<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//测试一级缓存</span></div><div class="line"><span class="meta">@Test</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testCache1</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</div><div class="line">    SqlSession sqlSession = sqlSessionFactory.openSession();</div><div class="line">    UserMapper mapper = sqlSession.getMapper(UserMapper.class);</div><div class="line">    <span class="comment">//第一次发起请求，查询id为1的用户</span></div><div class="line">    User user1 = mapper.findUserById(<span class="number">1</span>);</div><div class="line">    System.out.println(user1);</div><div class="line">    <span class="comment">//如果sqlSession去执行commit操作（执行插入、更新、删除），清空SqlSession中的一级缓存，这样做的目的为了让缓存中存储的是最新的信息，避免脏读。</span></div><div class="line"></div><div class="line">    <span class="comment">//更新user1的信息</span></div><div class="line">    user1.setUsername(<span class="string">"测试用户22"</span>);</div><div class="line">    mapper.updateUser(user1);</div><div class="line">    <span class="comment">//执行commit操作去清空缓存</span></div><div class="line">    sqlSession.commit();</div><div class="line"></div><div class="line">    <span class="comment">//第二次发起请求，查询id为1的用户</span></div><div class="line">    User user2 = mapper.findUserById(<span class="number">1</span>);</div><div class="line">    System.out.println(user2);</div><div class="line">    sqlSession.close();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h4 id="一级缓存应用"><a href="#一级缓存应用" class="headerlink" title="一级缓存应用"></a>一级缓存应用</h4><p>正式开发，是将mybatis和spring进行整合开发，事务控制在service中<br>一个service方法中包括很多mapper方法调用<br><em>伪代码</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">service&#123;</div><div class="line">	//开始执行时，开启事务，创建SqlSession对象</div><div class="line">	//第一次调用mapper的方法findUserById(1)</div><div class="line">	//第二次调用mapper的findUserById(1),从一级缓存中取数据</div><div class="line">	//方法结束，SqlSession关闭</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>如果是执行两次service调用查询相同的用户信息，不走一级缓存，因为service方法结束，sqlSession就关闭，一级缓存就清空</p>
-<h2 id="二级缓存"><a href="#二级缓存" class="headerlink" title="二级缓存"></a>二级缓存</h2><h3 id="二级缓存原理"><a href="#二级缓存原理" class="headerlink" title="二级缓存原理"></a>二级缓存原理</h3><p><img src="http://i.imgur.com/qDt2Jkn.png" alt=""><br>首先开启mybatis的二级缓存。</p>
+<h2 id="二级缓存"><a href="#二级缓存" class="headerlink" title="二级缓存"></a>二级缓存</h2><h3 id="二级缓存原理"><a href="#二级缓存原理" class="headerlink" title="二级缓存原理"></a>二级缓存原理</h3><p><img src="/img/twocache.png" alt=""><br>首先开启mybatis的二级缓存。</p>
 <p>sqlSession1去查询用户id为1的用户信息，查询到用户信息会将查询数据存储到二级缓存中。</p>
 <p>如果SqlSession3去执行相同 mapper下sql，执行commit提交，清空该 mapper下的二级缓存区域的数据。</p>
 <p>sqlSession2去查询用户id为1的用户信息，去缓存中找是否存在数据，如果存在直接从缓存中取出数据。</p>
@@ -453,13 +436,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/22/MySqlNote/Mysql入门/" rel="prev">Mysql入门(一)</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/22/mybatis/mybatis入门/" rel="next"></a>
+              <a href="/2017/08/22/mybatis/mybatis入门/" rel="next">mybatis入门</a>
             
           </div>
         </div>
@@ -564,7 +545,7 @@
           <div class="comments" id="comments">
             
               <div class="ds-thread" data-thread-key="2017/08/22/mybatis/mybatis进阶/"
-                   data-title="" data-url="http://yoursite.com/2017/08/22/mybatis/mybatis进阶/">
+                   data-title="mybatis进阶" data-url="http://yoursite.com/2017/08/22/mybatis/mybatis进阶/">
               </div>
             
           </div>
@@ -611,7 +592,7 @@
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
