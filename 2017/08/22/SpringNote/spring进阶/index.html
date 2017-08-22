@@ -51,7 +51,7 @@
 注解使用在类上面，方法上面和属性上面">
 <meta property="og:image" content="http://yoursite.com/img/aop.png">
 <meta property="og:image" content="http://yoursite.com/img/aopjar.png">
-<meta property="og:updated_time" content="2017-08-22T08:45:27.228Z">
+<meta property="og:updated_time" content="2017-08-22T08:54:19.216Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spring入门(二)">
 <meta name="twitter:description" content="Spring的bean管理(注解)注解介绍
@@ -264,11 +264,8 @@
 </li>
 </ul>
 </li>
-<li>开启注解扫描</li>
-<li><!--开启注解扫描
-  扫描包中类，方法和属性上是否有注解
-  -->
-<context:component-scan base-package="com.digreed.aop.demo1"></context:component-scan></li>
+<li>开启注解扫描<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">&lt;!--开启注解扫描</span></div><div class="line">    扫描包中类，方法和属性上是否有注解</div><div class="line">    --&gt;</div><div class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"com.digreed.aop.demo1"</span>&gt;</span><span class="tag">&lt;/<span class="name">context:component-scan</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
 </ul>
 <h4 id="注解创建对象"><a href="#注解创建对象" class="headerlink" title="注解创建对象"></a>注解创建对象</h4><ul>
 <li>在创建对象的类上面使用注解实现<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Component</span>(value = <span class="string">"user"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">()</span></span>&#123;</div><div class="line">        System.out.println(<span class="string">"add&gt;&gt;&gt;&gt;&gt;&gt;"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
