@@ -51,7 +51,7 @@
 非空
 唯一
 被引用">
-<meta property="og:updated_time" content="2017-08-22T06:47:37.540Z">
+<meta property="og:updated_time" content="2017-08-22T06:55:55.953Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql入门(二)">
 <meta name="twitter:description" content="约束主键约束
@@ -264,14 +264,18 @@
 </li>
 <li><p>修改表示指定主键：ALTER TABLE emp ADD PRIMARY KEY(empno);</p>
 </li>
-<li>删除主键：ALTER TABLE emp DROP PRIMARY KEY;<h2 id="主键自增长"><a href="#主键自增长" class="headerlink" title="主键自增长"></a>主键自增长</h2></li>
+<li>删除主键：ALTER TABLE emp DROP PRIMARY KEY;</li>
+</ul>
+<h2 id="主键自增长"><a href="#主键自增长" class="headerlink" title="主键自增长"></a>主键自增长</h2><ul>
 <li>因为主键列的特性是：必须唯一，不能为空，所以我们通常会指定主键类的类型为整型，然后设置其自动增长，这样可以保证子啊插入数据是主键列的唯一和非空特性</li>
 <li><p>创建表示指定主键自增长</p>
    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE emp(</div><div class="line">empno INT PRIMARY KEY AUTO_INCREMENT,</div><div class="line">ename VARCHAT(50)</div><div class="line">);</div></pre></td></tr></table></figure>
 </li>
 <li><p>修改表时设置主键自增长：ALTER TABLE emp CHANGE empno empno INT AUTO_INCREMENT;</p>
 </li>
-<li>修改表示删除主键自增长：ALTER TABLE emp CHANGE empno empno INT;<h3 id="非空约束和唯一约束"><a href="#非空约束和唯一约束" class="headerlink" title="非空约束和唯一约束"></a>非空约束和唯一约束</h3></li>
+<li>修改表示删除主键自增长：ALTER TABLE emp CHANGE empno empno INT;</li>
+</ul>
+<h3 id="非空约束和唯一约束"><a href="#非空约束和唯一约束" class="headerlink" title="非空约束和唯一约束"></a>非空约束和唯一约束</h3><ul>
 <li>非空约束：NOT NULL</li>
 <li>唯一约束：UNIQUE  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE emp(</div><div class="line">empno INT PRIMARY KEY AUTO_INCREMENT,</div><div class="line">ename VARCHAT(50) NOT NULL UNIQUE</div><div class="line">);</div></pre></td></tr></table></figure>
 </li>
@@ -497,7 +501,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

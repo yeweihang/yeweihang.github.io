@@ -43,7 +43,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/08/22/MySqlNote/Mysql入门/index.html">
 <meta property="og:site_name" content="叶苇杭的个人主页">
 <meta property="og:description" content="SQL结构化查询语言（Structured Query Language）">
-<meta property="og:updated_time" content="2017-08-22T06:47:49.381Z">
+<meta property="og:updated_time" content="2017-08-22T06:51:31.563Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql入门(一)">
 <meta name="twitter:description" content="SQL结构化查询语言（Structured Query Language）">
@@ -359,9 +359,11 @@
 <li>转换NULL值：有时需要把NULL转换成其他值，例如comm+1000时，如果comm列存在NULL值，那么NULL+1000还是NULL，而我们这时希望把NULL当成0来运算。IFNULL(列名,NULL将转换成的值)</li>
 <li>SELECT IFNULL(‘comm’,0)+1000 FROM emp;</li>
 <li>给列起别名：当使用列运算后，查询出的结果集中的列名称很不好看，这时我们需要给列起个别名，这样在结果中列名就显示别名，关键字AS，其实AS可以省略。</li>
-<li>SELECT IFNULL(‘comm’,0)+1000 AS 奖金 FROM emp;<h3 id="条件控制"><a href="#条件控制" class="headerlink" title="条件控制"></a>条件控制</h3></li>
+<li>SELECT IFNULL(‘comm’,0)+1000 AS 奖金 FROM emp;</li>
 </ul>
 </li>
+</ul>
+<h3 id="条件控制"><a href="#条件控制" class="headerlink" title="条件控制"></a>条件控制</h3><ul>
 <li>条件查询：与前面的UPDATA类似</li>
 <li>模糊查询：当你想查询姓张，并且姓名一共两个字的员工时，这是就可以使用模糊查询<ul>
 <li>SELECT * FROM emp WHERE ename LIKE ‘张<em>‘;查出张某的员工，</em>表示一个字符</li>
@@ -380,11 +382,13 @@
 </ul>
 </li>
 <li>使用多列排序作为排序条件：<ul>
-<li>SELECT * FROM WHERE emp ORDER BY sal ASC,comm DESC;使用sal升序排，如果sal相同时，使用comm的降序排<h3 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h3></li>
+<li>SELECT * FROM WHERE emp ORDER BY sal ASC,comm DESC;使用sal升序排，如果sal相同时，使用comm的降序排</li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+<h3 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h3><ul>
 <li>COUNT<ul>
 <li>SELECT COUNT(*) FROM emp;计算emp表中所有列都不为NULL的记录的行数</li>
 <li>SELECT COUNT(comm) FROM emp;计算emp表中comm列不为NULL的记录的行数</li>
@@ -403,12 +407,18 @@
 </ul>
 </li>
 <li>AVG<ul>
-<li>SELECT AVG(sal) AS 平均工资 FROM emp;查出平均工资<h3 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h3>分组查询是把记录使用某一列进行分组，然后查询组信息</li>
+<li>SELECT AVG(sal) AS 平均工资 FROM emp;查出平均工资</li>
 </ul>
 </li>
+</ul>
+<h3 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h3><p>分组查询是把记录使用某一列进行分组，然后查询组信息</p>
+<ul>
 <li>SELECT deptno,COUNT(*) FROM emp GROUP BY deptno;使用deptno分组，查询部门编号和每个部门的记录数</li>
 <li>SELECT job,MAX(sal) FROM emp GROUP BY job;使用job分组，查询每种工作的最高工资</li>
-<li>组条件，以部门分组，查询每组记录数。条件为记录数大于3<br><code>SELECT deptno,COUNT(*) FROM emp GROUP BY deptno HAVING COUNT(*)&gt;3;</code><h3 id="LIMIT子句"><a href="#LIMIT子句" class="headerlink" title="LIMIT子句"></a>LIMIT子句</h3>LIMIT用来限定查询结果的起始行，以及总行数。</li>
+<li>组条件，以部门分组，查询每组记录数。条件为记录数大于3<br><code>SELECT deptno,COUNT(*) FROM emp GROUP BY deptno HAVING COUNT(*)&gt;3;</code></li>
+</ul>
+<h3 id="LIMIT子句"><a href="#LIMIT子句" class="headerlink" title="LIMIT子句"></a>LIMIT子句</h3><p>LIMIT用来限定查询结果的起始行，以及总行数。</p>
+<ul>
 <li>查询起始行为第5行，一共查询3行记录：SELECT * FROM emp LIMIT 4,3;</li>
 <li>用于单页查询<ul>
 <li>一页的记录数：10行;查询第3页：SELECT * FROM emp LIMIT 20,10;</li>
@@ -447,7 +457,7 @@
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/22/mybatis/mybatis进阶/" rel="next"></a>
+              <a href="/2017/08/09/javascriptNote/表单提交/" rel="next">javaScript表单提交</a>
             
           </div>
         </div>
@@ -592,7 +602,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
