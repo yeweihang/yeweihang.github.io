@@ -37,18 +37,28 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="盒子模型对于盒子模型来说，盒子的组成由四部分：内容 边框 外边距 内边距">
+<meta name="description" content="约束主键约束
+特点
+非空
+唯一
+被引用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="盒子模型">
-<meta property="og:url" content="http://yoursite.com/2017/08/08/CSS盒子模型/index.html">
+<meta property="og:title" content="Mysql入门(二)">
+<meta property="og:url" content="http://yoursite.com/2017/08/22/MySqlNote/Mysql进阶/index.html">
 <meta property="og:site_name" content="叶苇杭的个人主页">
-<meta property="og:description" content="盒子模型对于盒子模型来说，盒子的组成由四部分：内容 边框 外边距 内边距">
-<meta property="og:image" content="http://yoursite.com/img/boxmodel.png">
-<meta property="og:updated_time" content="2017-08-09T05:34:06.432Z">
+<meta property="og:description" content="约束主键约束
+特点
+非空
+唯一
+被引用">
+<meta property="og:updated_time" content="2017-08-22T06:47:37.540Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="盒子模型">
-<meta name="twitter:description" content="盒子模型对于盒子模型来说，盒子的组成由四部分：内容 边框 外边距 内边距">
-<meta name="twitter:image" content="http://yoursite.com/img/boxmodel.png">
+<meta name="twitter:title" content="Mysql入门(二)">
+<meta name="twitter:description" content="约束主键约束
+特点
+非空
+唯一
+被引用">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +68,7 @@
   };
 </script>
 
-  <title> 盒子模型 | 叶苇杭的个人主页 </title>
+  <title> Mysql入门(二) | 叶苇杭的个人主页 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -183,7 +193,7 @@
           
           
             
-              盒子模型
+              Mysql入门(二)
             
           
         </h1>
@@ -192,8 +202,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2017-08-08T16:36:27+08:00" content="2017-08-08">
-            2017-08-08
+          <time itemprop="dateCreated" datetime="2017-08-22T12:02:16+08:00" content="2017-08-22">
+            2017-08-22
           </time>
         </span>
 
@@ -202,8 +212,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/HTMLNote/" itemprop="url" rel="index">
-                  <span itemprop="name">HTMLNote</span>
+                <a href="/categories/Mysql/" itemprop="url" rel="index">
+                  <span itemprop="name">Mysql</span>
                 </a>
               </span>
 
@@ -219,11 +229,11 @@
             <span class="post-comments-count">
               &nbsp; | &nbsp;
               <!--
-              <a href="/2017/08/08/CSS盒子模型/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/08/CSS盒子模型/" itemprop="commentsCount"></span>
+              <a href="/2017/08/22/MySqlNote/Mysql进阶/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/22/MySqlNote/Mysql进阶/" itemprop="commentsCount"></span>
               </a>
               -->
-              <a href="/2017/08/08/CSS盒子模型/#comments" itemprop="discussionUrl">
+              <a href="/2017/08/22/MySqlNote/Mysql进阶/#comments" itemprop="discussionUrl">
                 <span>评论</span>
               </a>
             </span>
@@ -238,90 +248,95 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h1><p>对于盒子模型来说，盒子的组成由四部分：<strong>内容 边框 外边距 内边距</strong><br><img src="/img/boxmodel.png" alt="盒子示例"><br><a id="more"></a></p>
-<h2 id="外边距"><a href="#外边距" class="headerlink" title="外边距"></a>外边距</h2><ul>
-<li>综合写法：<ul>
-<li>margin: 100px;代表上右下左都是100px;</li>
-<li>margin: 100px 50px;代表上下100px,左右50px;</li>
-<li>margin: 100px 50px 30px;代表上100px,右50px,下30px,左50px;</li>
-<li>margin: 100px 50px 30px 20px;代表上100px,右50px,下30px,左20px;</li>
-</ul>
-</li>
-<li>按照方向分开设置：<ul>
-<li>margin-left: 100px;</li>
-<li>margin-right: 50px;</li>
-<li>margin-top: 30px;</li>
-<li>margin-bottom:20px</li>
+        <span itemprop="articleBody"><h1 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h1><h2 id="主键约束"><a href="#主键约束" class="headerlink" title="主键约束"></a>主键约束</h2><ul>
+<li><strong>特点</strong><ul>
+<li>非空</li>
+<li>唯一</li>
+<li>被引用</li>
 </ul>
 </li>
 </ul>
-<h2 id="内边距"><a href="#内边距" class="headerlink" title="内边距"></a>内边距</h2><p>内边距的设置和外边距一致。</p>
-<h2 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h2><ul>
-<li><p>综合设置：</p>
+<a id="more"></a>
 <ul>
-<li>border: 线框 线型 颜色<blockquote>
-<p>四个边框设置的属性相同。设置的三个值没有先后顺序</p>
-</blockquote>
+<li>当表的某一列被指定为主键后，该列就不能为空，不能有重复值出现</li>
+<li><p>创建表示指定主键的两种方式</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//第一种</div><div class="line"> CREATE TABLE emp(</div><div class="line">empno INT PRIMARY KEY,</div><div class="line">ename VARCHAR(50)</div><div class="line">);</div><div class="line"></div><div class="line">//第二种</div><div class="line"> CREATE TABLE emp(</div><div class="line">empno INT,</div><div class="line">ename VARCHAR(50)</div><div class="line"> PRIMARY KEY(empno)</div><div class="line">);</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改表示指定主键：ALTER TABLE emp ADD PRIMARY KEY(empno);</p>
+</li>
+<li>删除主键：ALTER TABLE emp DROP PRIMARY KEY;<h2 id="主键自增长"><a href="#主键自增长" class="headerlink" title="主键自增长"></a>主键自增长</h2></li>
+<li>因为主键列的特性是：必须唯一，不能为空，所以我们通常会指定主键类的类型为整型，然后设置其自动增长，这样可以保证子啊插入数据是主键列的唯一和非空特性</li>
+<li><p>创建表示指定主键自增长</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE emp(</div><div class="line">empno INT PRIMARY KEY AUTO_INCREMENT,</div><div class="line">ename VARCHAT(50)</div><div class="line">);</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改表时设置主键自增长：ALTER TABLE emp CHANGE empno empno INT AUTO_INCREMENT;</p>
+</li>
+<li>修改表示删除主键自增长：ALTER TABLE emp CHANGE empno empno INT;<h3 id="非空约束和唯一约束"><a href="#非空约束和唯一约束" class="headerlink" title="非空约束和唯一约束"></a>非空约束和唯一约束</h3></li>
+<li>非空约束：NOT NULL</li>
+<li>唯一约束：UNIQUE  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE emp(</div><div class="line">empno INT PRIMARY KEY AUTO_INCREMENT,</div><div class="line">ename VARCHAT(50) NOT NULL UNIQUE</div><div class="line">);</div></pre></td></tr></table></figure>
 </li>
 </ul>
-</li>
-<li><p>按属性去分别综合设置 </p>
+<h3 id="概念模型"><a href="#概念模型" class="headerlink" title="概念模型"></a>概念模型</h3><p>一对多<br>多对一<br>多对多<br>对象模型：可以双向关联，而且引用的是对象，而不是一个主键<br>关系模型：只能多方引用一方，而且引用的只是主键，而不是以整行记录</p>
+<h3 id="外键约束"><a href="#外键约束" class="headerlink" title="外键约束"></a>外键约束</h3><ul>
+<li>外键必须是另一个表的主键的值(外键要引用主键)</li>
+<li>外键可以重复</li>
+<li>外键可以为空</li>
+<li>一张表可以有多个外键</li>
+</ul>
+<p>概念模型在数据库中成为表<br>数据库表中的多对一关系，只需要在多方使用一个独立的列来引用一方的主键</p>
 <ul>
-<li>border-width: 设置方式同外边距</li>
-<li>border-style: solid dashed dotted double;<ul>
-<li>solid 实线</li>
-<li>dashed 虚线</li>
-<li>dotted 点线</li>
-<li>double 双线</li>
-</ul>
-</li>
-<li>border-color: red blue black green;</li>
-</ul>
-</li>
-<li>按照方向去分别综合设置 <ul>
-<li>border-top: 10px solid red;</li>
-<li>border-right: 5px dashed blue;</li>
-<li>border-bottom: 3px botted green;</li>
-<li>border-left: 2px double black;</li>
-</ul>
+<li>创建外键的两种方式  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE dept(</div><div class="line">deptno INT PRIMARY KEY,</div><div class="line">dname VARCHAR(50)</div><div class="line">);</div><div class="line">INSERT INTO dept(deptno,dname) VALUES(10,&apos;研发部&apos;);</div><div class="line">INSERT INTO dept(deptno,dname) VALUES(20,&apos;财务部&apos;);</div><div class="line">INSERT INTO dept(deptno,dname) VALUES(30,&apos;人力部&apos;);</div><div class="line">CREATE TABLE emp(</div><div class="line">empno INT PRIMARY KEY AUTO_INCREMENT,</div><div class="line">ename VARCHAR(50),</div><div class="line">dno INT,</div><div class="line">CONSTRAINT fk_emp_dept FOREIGN KEY(dno) REFERENCES dept(deptno)</div><div class="line">);</div><div class="line">INSERT INTO emp(empno,ename,dno) VALUES(NULL,&apos;Tom&apos;,NULL);</div><div class="line">INSERT INTO emp(empno,ename,dno) VALUES(NULL,&apos;Linda&apos;,10);</div><div class="line">INSERT INTO emp(empno,ename,dno) VALUES(NULL,&apos;Mali&apos;,20);</div><div class="line">//第二种方式</div><div class="line">ALTER TABLE emp</div><div class="line">ADD CONSTRAINT fk_emp_dept FOREIGN KEY(dno) REFERENCES dept(deptno);</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<h1 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h1><h3 id="合并结果集"><a href="#合并结果集" class="headerlink" title="合并结果集"></a>合并结果集</h3><ul>
+<li>要求被合并的表中，列的类型和列数相同</li>
+<li>UNION,去除重复行</li>
+<li>UNION ALL,不去除重复行<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">SELECT * FROM cd</div><div class="line">UNION ALL</div><div class="line">SELECT * FROM ab;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h2><ul>
+<li>内连接</li>
+<li>外连接<ul>
+<li>左外连接</li>
+<li>右外连接</li>
+<li>全外连接(MySQL不支持)</li>
+</ul>
+</li>
+<li>自然连接</li>
+</ul>
+<h3 id="内连接"><a href="#内连接" class="headerlink" title="内连接"></a>内连接</h3><ul>
+<li>方言：SELECT * FROM 表1,表2 WHERE 表1.xx=表2.xx</li>
+<li>标准：SELECT * FROM 表1 INNER JOIN 表2 ON 表1.xx=表2.xx</li>
+<li>自然：SELECT * FROM 表1 NATURAL JOIN 表2</li>
+</ul>
+<h3 id="外连接"><a href="#外连接" class="headerlink" title="外连接"></a>外连接</h3><ul>
+<li>左外：SELECT * FROM 表1 LEFT OUTER JOIN 表2 ON 表1.xx=表2.xx<ul>
+<li>左表记录无论是否满足条件都会查询出来，而右表只有满足条件才能出来。左表中不满足条件的记录，右表部分都为NULL</li>
+</ul>
+</li>
+<li>左外自然：SELECT * FROM 表1 NATURAL LEFT OUTER JOIN 表2 ON 表1.xx=表2.xx</li>
+<li>右外：SELECT * FROM 表1 RIGHT OUTER JOIN 表2 ON 表1.xx=表2.xx<ul>
+<li>右表记录无论是否满足条件都会查询出来，而左表只有满足条件才能出来。右表不满足条件的记录，其左表部分都为NULL</li>
+</ul>
+</li>
+<li>右外自然：SELECT * FROM 表1 NATURAL RIGHT OUTER JOIN 表2 ON 表1.xx=表2.xx</li>
+<li>全连接：可以使用UNION来完成全连接</li>
+</ul>
+<h3 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h3><p>查询中有查询</p>
 <ul>
-<li>按照方向和属性去设置每个边框<ul>
-<li>border-top-width: 10px;</li>
-<li>border-top-style: solid;</li>
-<li>border-top-color: red; </li>
+<li>出现的位置<ul>
+<li>WHERE后作为条件存在</li>
+<li>FROM后作为表存在</li>
+</ul>
+</li>
+<li>条件<ul>
+<li>单行单列：SELECT * FROM 表1 WHERE 列1 [=、&gt;、&lt;、&gt;=、&lt;=、!=] (SELECT 列 FROM 表2 WHERE 条件</li>
+<li>多行单列：SELECT * FROM 表1 WHERE 列1 [IN、ALL、ANY] (SELECT 列 FROM 表2 WHERE 条件)</li>
+<li>单行多列：SELECT <em> FROM 表1 WHERE (列1,列2) IN (SELECT </em> FROM 表2 WHERE 条件)</li>
+<li>多行多列：SELECT * FROM 表1,(SELECT …) WHERE 条件</li>
 </ul>
 </li>
 </ul>
-<h1 id="背景图片的设置"><a href="#背景图片的设置" class="headerlink" title="背景图片的设置"></a>背景图片的设置</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">background-color: red;</div><div class="line">background-image: url(img/zhayan.jpg);</div><div class="line">background-repeat: no-repeat;</div><div class="line">/*background-size: 300px 200px;*/</div><div class="line">background-size:contain;</div><div class="line">background-position: -50% -50%;</div></pre></td></tr></table></figure>
-<p>背景图片的设置，我们需要记住以上这些属性<br>backfround-image: url(img/zhayan.png);<br>这句是添加背景图片。URL当中可以是图片的相对路径也可以是绝对路径。再有，背景图片添加进来的时候默认是重复的</p>
-<p>background-repeat: no-repreat;<br>由于背景图片添加进来默认是重复的，我们需要根据需要设置背景是否重复。<br>它的值可以是repeat-x，代表水平方向可以重复。<br>还可以是repeat-y，代表垂直方向向下可以重复。<br>还可以是no-repreat，代表不重复。</p>
-<p>background-size: 300px 200px;<br>background-size： 100% 100%；<br>它可以设置背景的大小，通常我们的图片都有默认大小，如果背景图片太大会超出盒子的范围，盒子范围之外的是看不到的，那么我们看到的背景不完整。如果背景图片太小，图片又不能完全覆盖盒子，盒子会流出空隙。因此，我们想让背景和盒子相同大小，需要给背景设置大小和盒子一样大小，可以用固定px去设置，也可以根据百分比去设置，百分比设置100% 100%；</p>
-<p>background-position: -50px -20px;<br>这个属性可以定位我们的背景图片，让背景图片在盒子当中去任意移动。<br>如果图片比盒子小那么图片可以放置在盒子内的任意一个位置。比如图片放在何止中间我们给值 50% 50%; 放在右下角给值 100% 100%。放置在自己任意指定的位置，用固定的px值。<br>如果图片比盒子大，可以通过这个属性指定图片的哪部分显示在盒子当中，这就是我们说的雪碧图技术。</p>
-<h1 id="在css中需要注意的一些操作和问题"><a href="#在css中需要注意的一些操作和问题" class="headerlink" title="在css中需要注意的一些操作和问题"></a>在css中需要注意的一些操作和问题</h1><ul>
-<li><p>文本水平居中</p>
-<blockquote>
-<p>所有行内标签都和文本一样</p>
-</blockquote>
-</li>
-<li><p><strong>单行文本</strong>在盒内正中</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">text-align:center;</div><div class="line">line-height:盒子高度;</div></pre></td></tr></table></figure>
-</li>
-<li><p><strong>多行文本</strong>在盒内居中</p>
-<blockquote>
-<p>多行文本没办法用单行文本的方式<br>只能用盒子的padding去把文本往下挤<br><strong>但是这牵扯到盒子会变大的问题，我们需要精确还原盒子。</strong></p>
-</blockquote>
-<ul>
-<li><strong>精确还原盒子</strong><blockquote>
-<p>如果网站要求有一个固定大小的盒子，比如就是300乘以300的盒子，而我们制作网页的时候需要将盒子的内容往里挤我们添加了padding，这会盒子是会变大，不符合我们固定的大小。要去精确还原盒子精确还原盒子就是在哪个方向上有边距，就在哪个方向上减去相应大小的内容区域</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li>盒子居中<br>margin: 0 auto;<br><strong>这个只能在标准文档流中用，且盒子的宽必须设置</strong>(浮动的元素将失效)</li>
-</ul>
-<p><strong>父子盒子垂直方向的margin转移</strong><br>在处理父子盒子垂直方向边距时要善于运用父亲的padding，而不是儿子的margin，在处理兄弟的时候都可以。<br><strong>标准文档流中兄弟盒子垂直方向的margin塌陷问题</strong><br>兄弟盒子在垂直方向上，哥哥设置下外边距，弟弟设置上外边距。那么他们的外边距会有塌陷现象。小的边距会塌陷到大的边距里面。比如哥哥设置下外边距200，弟弟设置上外边距100，那么他们之间的外边距只有200，而不是300。<br><strong>行内标签在垂直方向的边距不起作用，无论是内边距还是外边距</strong></p>
 </span>
       
     </div>
@@ -333,13 +348,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/08/浮动与定位/" rel="prev">浮动与定位</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/08/CSS性质/" rel="next">CSS性质</a>
+              <a href="/2017/08/22/MySqlNote/Mysql入门/" rel="next">Mysql入门(一)</a>
             
           </div>
         </div>
@@ -443,8 +456,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2017/08/08/CSS盒子模型/"
-                   data-title="盒子模型" data-url="http://yoursite.com/2017/08/08/CSS盒子模型/">
+              <div class="ds-thread" data-thread-key="2017/08/22/MySqlNote/Mysql进阶/"
+                   data-title="Mysql入门(二)" data-url="http://yoursite.com/2017/08/22/MySqlNote/Mysql进阶/">
               </div>
             
           </div>
@@ -536,7 +549,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#盒子模型"><span class="nav-number">1.</span> <span class="nav-text">盒子模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#外边距"><span class="nav-number">1.1.</span> <span class="nav-text">外边距</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内边距"><span class="nav-number">1.2.</span> <span class="nav-text">内边距</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#边框"><span class="nav-number">1.3.</span> <span class="nav-text">边框</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#背景图片的设置"><span class="nav-number">2.</span> <span class="nav-text">背景图片的设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在css中需要注意的一些操作和问题"><span class="nav-number">3.</span> <span class="nav-text">在css中需要注意的一些操作和问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#约束"><span class="nav-number">1.</span> <span class="nav-text">约束</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#主键约束"><span class="nav-number">1.1.</span> <span class="nav-text">主键约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主键自增长"><span class="nav-number">1.2.</span> <span class="nav-text">主键自增长</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#非空约束和唯一约束"><span class="nav-number">1.2.1.</span> <span class="nav-text">非空约束和唯一约束</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念模型"><span class="nav-number">1.2.2.</span> <span class="nav-text">概念模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外键约束"><span class="nav-number">1.2.3.</span> <span class="nav-text">外键约束</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多表查询"><span class="nav-number">2.</span> <span class="nav-text">多表查询</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#合并结果集"><span class="nav-number">2.0.1.</span> <span class="nav-text">合并结果集</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接查询"><span class="nav-number">2.1.</span> <span class="nav-text">连接查询</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内连接"><span class="nav-number">2.1.1.</span> <span class="nav-text">内连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外连接"><span class="nav-number">2.1.2.</span> <span class="nav-text">外连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子查询"><span class="nav-number">2.1.3.</span> <span class="nav-text">子查询</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
